@@ -139,7 +139,7 @@ const Index = () => {
       <section id="home" className="relative z-10 flex items-center justify-center min-h-[80vh] text-center px-6">
         {/* Video Background Area */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full max-w-4xl h-64 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-purple-400/30 flex items-center justify-center">
+          <div className="w-full max-w-4xl h-64 bg-gray-700/70 backdrop-blur-md rounded-xl border border-purple-400/40 flex items-center justify-center">
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
                 <Youtube className="w-8 h-8 text-purple-400" />
@@ -165,7 +165,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-purple-800/70 backdrop-blur-sm">
+      <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -206,7 +206,7 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-900/70 backdrop-blur-sm">
+      <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -260,7 +260,7 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-purple-800/70 backdrop-blur-sm">
+      <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -311,7 +311,7 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-900/70 backdrop-blur-sm">
+      <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
