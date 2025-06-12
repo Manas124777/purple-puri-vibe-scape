@@ -107,14 +107,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-slate-900">
+    <div className="min-h-screen relative overflow-hidden bg-gray-900">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900"></div>
-        <div className="absolute inset-0 bg-slate-800/40">
-          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="w-full h-full bg-gradient-to-br from-purple-900 via-gray-800 to-gray-900"></div>
+        <div className="absolute inset-0 bg-gray-800/40">
+          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-800/40 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/60 via-gray-800/40 to-gray-900/60"></div>
       </div>
 
       {/* Navigation */}
@@ -161,7 +161,20 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-[80vh] text-center px-6">
-        <div className="max-w-4xl relative z-10">
+        {/* Video Background Area */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-full max-w-4xl h-64 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-orange-400/30 flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-orange-500/20 rounded-full flex items-center justify-center">
+                <Youtube className="w-8 h-8 text-orange-400" />
+              </div>
+              <p className="text-gray-300 text-lg font-medium">Video Placeholder</p>
+              <p className="text-gray-400 text-sm mt-2">Scene Sariba Jam Highlights</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-4xl relative z-10 mt-80">
           {/* Scene Sariba Logo */}
           <div className="mb-8">
             <img 
@@ -178,7 +191,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-slate-800/70 backdrop-blur-sm">
+      <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-purple-800/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -219,7 +232,7 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-slate-900/70 backdrop-blur-sm">
+      <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-900/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -246,7 +259,6 @@ const Index = () => {
                     className="w-full h-64 object-cover"
                   />
                   
-                  {/* Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent transition-all duration-300 ${
                     selectedArtist === artist.id ? 'opacity-95' : 'opacity-70 group-hover:opacity-85'
                   }`}>
@@ -256,7 +268,6 @@ const Index = () => {
                     </div>
                   </div>
 
-                  {/* Sliding Panel */}
                   <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-300 ${
                     selectedArtist === artist.id ? 'translate-y-0' : 'translate-y-full'
                   }`}>
@@ -275,7 +286,7 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-slate-800/70 backdrop-blur-sm">
+      <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-purple-800/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -302,7 +313,6 @@ const Index = () => {
                     className="w-full h-64 object-cover"
                   />
                   
-                  {/* Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
                     selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
                   }`}>
@@ -311,7 +321,6 @@ const Index = () => {
                     </div>
                   </div>
 
-                  {/* Sliding Panel */}
                   <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-300 ${
                     selectedGallery === item.id ? 'translate-y-0' : 'translate-y-full'
                   }`}>
@@ -328,7 +337,7 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-slate-900/70 backdrop-blur-sm">
+      <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-900/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
@@ -339,9 +348,8 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-slate-800/70 backdrop-blur-md rounded-xl p-6 border border-orange-400/40">
+              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-orange-400/40">
                 <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -403,9 +411,8 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Join the Movement */}
             <div className="space-y-6">
-              <div className="bg-slate-800/70 backdrop-blur-md rounded-xl p-6 border border-orange-400/40">
+              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-orange-400/40">
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
                 <p className="text-gray-300 mb-6">Ready to be part of Puri's most vibrant dance community?</p>
                 
@@ -447,7 +454,7 @@ const Index = () => {
 
       {/* Floating Elements */}
       <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full opacity-20 animate-bounce"></div>
-      <div className="absolute top-1/3 right-10 w-8 h-8 bg-gradient-to-r from-orange-600 to-slate-600 rounded-full opacity-30 animate-pulse"></div>
+      <div className="absolute top-1/3 right-10 w-8 h-8 bg-gradient-to-r from-orange-600 to-gray-600 rounded-full opacity-30 animate-pulse"></div>
       <div className="absolute bottom-1/3 right-1/4 w-12 h-12 bg-gradient-to-r from-orange-600 to-orange-500 rounded-full opacity-25 animate-bounce" style={{ animationDelay: '1s' }}></div>
     </div>
   );
