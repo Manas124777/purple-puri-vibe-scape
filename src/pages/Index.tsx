@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Clock, Users, Instagram, Youtube, Music, Mail, Phone, User, MessageSquare } from 'lucide-react';
@@ -110,8 +111,8 @@ const Index = () => {
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-purple-700 via-purple-800 to-gray-900"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/60 via-purple-800/30 to-gray-900/50"></div>
+        <div className="w-full h-full bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-900/50"></div>
       </div>
 
       {/* Navigation */}
@@ -136,30 +137,30 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-[80vh] text-center px-6">
+        {/* Video Background for Home Section Only */}
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-gray-700/70 backdrop-blur-md flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
+                <Youtube className="w-8 h-8 text-purple-400" />
+              </div>
+              <p className="text-gray-300 text-lg font-medium">Video Placeholder</p>
+              <p className="text-gray-400 text-sm mt-2">Scene Sariba Jam Highlights</p>
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-4xl relative z-10">
           <div className="mb-8">
             <img
               src="/lovable-uploads/744ee8a6-9231-478c-96ee-9e02ce62a74f.png"
               alt="Scene Sariba Logo"
-              className="mx-auto w-96 h-auto"
+              className="mx-auto w-96 h-auto relative z-20"
             />
           </div>
-          <p className="text-xl lg:text-2xl text-gray-200 mb-8 font-medium drop-shadow-lg">
+          <p className="text-xl lg:text-2xl text-gray-200 mb-8 font-medium drop-shadow-lg relative z-20">
             Where Culture Meets Rhythm in Puri
           </p>
-          
-          {/* Video Background Area */}
-          <div className="mt-12 flex items-center justify-center">
-            <div className="w-full max-w-4xl h-64 bg-gray-700/70 backdrop-blur-md rounded-xl border border-purple-400/40 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
-                  <Youtube className="w-8 h-8 text-purple-400" />
-                </div>
-                <p className="text-gray-300 text-lg font-medium">Video Placeholder</p>
-                <p className="text-gray-400 text-sm mt-2">Scene Sariba Jam Highlights</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
