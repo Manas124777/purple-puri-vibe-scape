@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Clock, Users, Instagram, Youtube, Music, Mail, Phone, User, MessageSquare } from 'lucide-react';
@@ -40,7 +39,7 @@ const Index = () => {
       role: "Founder & Head Choreographer",
       specialty: "Hip-Hop, Krumping",
       bio: "Pioneer of Puri's street dance scene with 8+ years of experience",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: ""
     },
     {
       id: 2,
@@ -48,7 +47,7 @@ const Index = () => {
       role: "Creative Director",
       specialty: "Contemporary, Odissi Fusion",
       bio: "Blending traditional Odissi with modern expressions",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b193?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: ""
     },
     {
       id: 3,
@@ -56,7 +55,7 @@ const Index = () => {
       role: "Battle Coordinator",
       specialty: "Breaking, Popping",
       bio: "National level B-boy representing Odisha across India",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: ""
     },
     {
       id: 4,
@@ -64,7 +63,7 @@ const Index = () => {
       role: "Community Manager",
       specialty: "House, Waacking",
       bio: "Building bridges between dancers and the Puri community",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: ""
     }
   ];
 
@@ -73,42 +72,42 @@ const Index = () => {
       id: 1,
       title: "Scene Sariba Jam 2023",
       description: "Epic battle moments from our flagship event",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: ""
     },
     {
       id: 2,
       title: "Summer Concert",
       description: "Energetic performances under the stars",
-      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: ""
     },
     {
       id: 3,
       title: "Community Gathering",
       description: "Bringing dancers together from across India",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: ""
     },
     {
       id: 4,
       title: "Street Battles",
       description: "Raw energy and pure talent on display",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: ""
     },
     {
       id: 5,
       title: "Cultural Fusion",
       description: "Traditional meets contemporary dance",
-      image: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: ""
     },
     {
       id: 6,
       title: "Beach Vibes",
       description: "Dancing with the waves at Puri Beach",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image: ""
     }
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-purple-700 via-purple-800 to-gray-900">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-gradient-to-br from-purple-700 via-purple-800 to-gray-900"></div>
@@ -137,20 +136,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-[80vh] text-center px-6">
-        {/* Video Background Area */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full max-w-4xl h-64 bg-gray-700/70 backdrop-blur-md rounded-xl border border-purple-400/40 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
-                <Youtube className="w-8 h-8 text-purple-400" />
-              </div>
-              <p className="text-gray-300 text-lg font-medium">Video Placeholder</p>
-              <p className="text-gray-400 text-sm mt-2">Scene Sariba Jam Highlights</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-4xl relative z-10 mt-80">
+        <div className="max-w-4xl relative z-10">
           <div className="mb-8">
             <img
               src="/lovable-uploads/744ee8a6-9231-478c-96ee-9e02ce62a74f.png"
@@ -161,6 +147,19 @@ const Index = () => {
           <p className="text-xl lg:text-2xl text-gray-200 mb-8 font-medium drop-shadow-lg">
             Where Culture Meets Rhythm in Puri
           </p>
+          
+          {/* Video Background Area */}
+          <div className="mt-12 flex items-center justify-center">
+            <div className="w-full max-w-4xl h-64 bg-gray-700/70 backdrop-blur-md rounded-xl border border-purple-400/40 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
+                  <Youtube className="w-8 h-8 text-purple-400" />
+                </div>
+                <p className="text-gray-300 text-lg font-medium">Video Placeholder</p>
+                <p className="text-gray-400 text-sm mt-2">Scene Sariba Jam Highlights</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -227,11 +226,7 @@ const Index = () => {
                 onClick={() => setSelectedArtist(selectedArtist === artist.id ? null : artist.id)}
               >
                 <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 transition-all duration-300 hover:scale-105">
-                  <img 
-                    src={artist.image} 
-                    alt={artist.name}
-                    className="w-full h-64 object-cover"
-                  />
+                  <div className="w-full h-64 bg-black"></div>
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent transition-all duration-300 ${
                     selectedArtist === artist.id ? 'opacity-95' : 'opacity-70 group-hover:opacity-85'
@@ -281,11 +276,7 @@ const Index = () => {
                 onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
               >
                 <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 transition-all duration-300 hover:scale-105">
-                  <img 
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-64 object-cover"
-                  />
+                  <div className="w-full h-64 bg-black"></div>
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
                     selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
