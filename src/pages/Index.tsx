@@ -40,7 +40,7 @@ const Index = () => {
       role: "Founder & Head Choreographer",
       specialty: "Hip-Hop, Krumping",
       bio: "Pioneer of Puri's street dance scene with 8+ years of experience",
-      image: ""
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 2,
@@ -48,7 +48,7 @@ const Index = () => {
       role: "Creative Director",
       specialty: "Contemporary, Odissi Fusion",
       bio: "Blending traditional Odissi with modern expressions",
-      image: ""
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b193?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 3,
@@ -56,7 +56,7 @@ const Index = () => {
       role: "Battle Coordinator",
       specialty: "Breaking, Popping",
       bio: "National level B-boy representing Odisha across India",
-      image: ""
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 4,
@@ -64,7 +64,7 @@ const Index = () => {
       role: "Community Manager",
       specialty: "House, Waacking",
       bio: "Building bridges between dancers and the Puri community",
-      image: ""
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -73,131 +73,145 @@ const Index = () => {
       id: 1,
       title: "Scene Sariba Jam 2023",
       description: "Epic battle moments from our flagship event",
-      image: ""
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 2,
       title: "Summer Concert",
       description: "Energetic performances under the stars",
-      image: ""
+      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 3,
       title: "Community Gathering",
       description: "Bringing dancers together from across India",
-      image: ""
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 4,
       title: "Street Battles",
       description: "Raw energy and pure talent on display",
-      image: ""
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 5,
       title: "Cultural Fusion",
       description: "Traditional meets contemporary dance",
-      image: ""
+      image: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 6,
       title: "Beach Vibes",
       description: "Dancing with the waves at Puri Beach",
-      image: ""
+      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
+    <div className="min-h-screen relative overflow-hidden bg-gray-50">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-900/50"></div>
+        <div className="w-full h-full bg-gradient-to-br from-purple-100 via-gray-100 to-purple-50"></div>
+        <div className="absolute inset-0 bg-gray-200/40">
+          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20"></div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-50/60 via-gray-100/40 to-purple-100/60"></div>
       </div>
 
       {/* Navigation */}
       <nav className="relative z-50 flex items-center justify-between p-6 lg:px-12">
         <div className="text-2xl lg:text-3xl font-bold">
-          <span className="bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-purple-600 to-gray-800 bg-clip-text text-transparent">
             Scene Sariba
           </span>
         </div>
+
         <div className="flex space-x-4 md:space-x-8">
-          {['home','about','artists','gallery','contact'].map(sec => (
-            <button
-              key={sec}
-              onClick={() => scrollToSection(sec)}
-              className="text-gray-100 hover:text-purple-300 transition-all duration-300 font-semibold hover:scale-105 text-sm md:text-base"
-            >
-              {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
-            </button>
-          ))}
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="text-gray-700 hover:text-purple-600 transition-all duration-300 font-semibold hover:scale-105 text-sm md:text-base"
+          >
+            Home
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="text-gray-700 hover:text-purple-600 transition-all duration-300 font-semibold hover:scale-105 text-sm md:text-base"
+          >
+            About
+          </button>
+          <button 
+            onClick={() => scrollToSection('artists')}
+            className="text-gray-700 hover:text-purple-600 transition-all duration-300 font-semibold hover:scale-105 text-sm md:text-base"
+          >
+            Artists
+          </button>
+          <button 
+            onClick={() => scrollToSection('gallery')}
+            className="text-gray-700 hover:text-purple-600 transition-all duration-300 font-semibold hover:scale-105 text-sm md:text-base"
+          >
+            Gallery
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="text-gray-700 hover:text-purple-600 transition-all duration-300 font-semibold hover:scale-105 text-sm md:text-base"
+          >
+            Contact Us
+          </button>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-[80vh] text-center px-6">
-        {/* Video Background for Home Section Only */}
-        <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-gray-700/70 backdrop-blur-md flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
-                <Youtube className="w-8 h-8 text-purple-400" />
-              </div>
-              <p className="text-gray-300 text-lg font-medium">Video Placeholder</p>
-              <p className="text-gray-400 text-sm mt-2">Scene Sariba Jam Highlights</p>
-            </div>
-          </div>
-        </div>
-
         <div className="max-w-4xl relative z-10">
+          {/* Scene Sariba Logo */}
           <div className="mb-8">
-            <img
-              src="/lovable-uploads/744ee8a6-9231-478c-96ee-9e02ce62a74f.png"
+            <img 
+              src="/lovable-uploads/744ee8a6-9231-478c-96ee-9e02ce62a74f.png" 
               alt="Scene Sariba Logo"
-              className="mx-auto w-96 h-auto relative z-20"
+              className="mx-auto w-96 h-auto"
             />
           </div>
-          <p className="text-xl lg:text-2xl text-gray-200 mb-8 font-medium drop-shadow-lg relative z-20">
+          
+          <p className="text-xl lg:text-2xl text-gray-600 mb-8 font-medium drop-shadow-lg">
             Where Culture Meets Rhythm in Puri
           </p>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
+      <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-purple-50/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
+              <span className="bg-gradient-to-r from-purple-600 to-gray-700 bg-clip-text text-transparent drop-shadow-lg">
                 ABOUT
               </span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-gray-700/70 backdrop-blur-md rounded-2xl p-8 border border-purple-400/40">
-              <h3 className="text-3xl font-bold text-gray-100 mb-6">The Addyction - Adarsh Mishra</h3>
-              <p className="text-gray-200 leading-relaxed mb-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-purple-200/40 shadow-lg">
+              <h3 className="text-3xl font-bold text-gray-800 mb-6">The Addyction - Adarsh Mishra</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Adarsh Mishra, known as "The Addyction," is the visionary founder of Scene Sariba. With over 8 years of experience in the dance industry, he has revolutionized the street dance culture in Puri, Odisha.
               </p>
-              <p className="text-gray-200 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 His passion for blending traditional Odia culture with contemporary dance forms has created a unique movement that resonates with dancers across the region. Adarsh's choreography style combines raw energy with cultural storytelling.
               </p>
-              <p className="text-gray-200 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Under his leadership, Scene Sariba has grown from a small local crew to one of the most respected dance communities in Eastern India.
               </p>
             </div>
 
-            <div className="bg-gray-700/70 backdrop-blur-md rounded-2xl p-8 border border-purple-400/40">
-              <h3 className="text-3xl font-bold text-gray-100 mb-6">Scene Sariba Jam</h3>
-              <p className="text-gray-200 leading-relaxed mb-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-purple-200/40 shadow-lg">
+              <h3 className="text-3xl font-bold text-gray-800 mb-6">Scene Sariba Jam</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Scene Sariba Jam is more than just a dance battle - it's a cultural celebration that brings together the best dancers from across India. This flagship event showcases the perfect fusion of traditional Odissi dance with modern street styles.
               </p>
-              <p className="text-gray-200 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 The jam features multiple battle categories including Hip-Hop, Breaking, Popping, Locking, and Contemporary fusion. What makes it special is the integration of Odia cultural elements, making each battle a storytelling experience.
               </p>
-              <p className="text-gray-200 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Held annually at the beautiful Puri Beach, the jam attracts dancers, artists, and culture enthusiasts from all over the country, creating an unforgettable experience of rhythm, culture, and community.
               </p>
             </div>
@@ -206,15 +220,15 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
+      <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-100/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
+              <span className="bg-gradient-to-r from-purple-600 to-gray-700 bg-clip-text text-transparent drop-shadow-lg">
                 ARTISTS
               </span>
             </h2>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Meet the passionate artists who bring Scene Sariba to life
             </p>
           </div>
@@ -226,26 +240,32 @@ const Index = () => {
                 className="relative group cursor-pointer"
                 onClick={() => setSelectedArtist(selectedArtist === artist.id ? null : artist.id)}
               >
-                <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 transition-all duration-300 hover:scale-105">
-                  <div className="w-full h-64 bg-black"></div>
+                <div className="relative overflow-hidden rounded-xl bg-white/80 border border-purple-200/40 transition-all duration-300 hover:scale-105 shadow-lg">
+                  <img 
+                    src={artist.image} 
+                    alt={artist.name}
+                    className="w-full h-64 object-cover"
+                  />
                   
-                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent transition-all duration-300 ${
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-purple-700 via-purple-600/60 to-transparent transition-all duration-300 ${
                     selectedArtist === artist.id ? 'opacity-95' : 'opacity-70 group-hover:opacity-85'
                   }`}>
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <h3 className="text-xl font-bold text-white mb-1">{artist.name}</h3>
-                      <p className="text-purple-300 text-sm font-semibold">{artist.role}</p>
+                      <p className="text-purple-200 text-sm font-semibold">{artist.role}</p>
                     </div>
                   </div>
 
-                  <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-300 ${
+                  {/* Sliding Panel */}
+                  <div className={`absolute inset-0 bg-purple-700/95 backdrop-blur-sm transform transition-transform duration-300 ${
                     selectedArtist === artist.id ? 'translate-y-0' : 'translate-y-full'
                   }`}>
                     <div className="p-6 h-full flex flex-col justify-center">
                       <h3 className="text-2xl font-bold text-white mb-3">{artist.name}</h3>
-                      <p className="text-purple-300 font-semibold mb-2">{artist.role}</p>
-                      <p className="text-purple-200 text-sm mb-4">{artist.specialty}</p>
-                      <p className="text-gray-200 text-sm leading-relaxed">{artist.bio}</p>
+                      <p className="text-purple-200 font-semibold mb-2">{artist.role}</p>
+                      <p className="text-purple-100 text-sm mb-4">{artist.specialty}</p>
+                      <p className="text-gray-100 text-sm leading-relaxed">{artist.bio}</p>
                     </div>
                   </div>
                 </div>
@@ -256,15 +276,15 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
+      <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-purple-50/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
+              <span className="bg-gradient-to-r from-purple-600 to-gray-700 bg-clip-text text-transparent drop-shadow-lg">
                 GALLERY
               </span>
             </h2>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Capturing the energy and passion of Scene Sariba events
             </p>
           </div>
@@ -276,10 +296,15 @@ const Index = () => {
                 className="relative group cursor-pointer"
                 onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
               >
-                <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 transition-all duration-300 hover:scale-105">
-                  <div className="w-full h-64 bg-black"></div>
+                <div className="relative overflow-hidden rounded-xl bg-white/80 border border-purple-200/40 transition-all duration-300 hover:scale-105 shadow-lg">
+                  <img 
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-64 object-cover"
+                  />
                   
-                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-purple-700 via-purple-600/40 to-transparent transition-all duration-300 ${
                     selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
                   }`}>
                     <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -287,12 +312,13 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-300 ${
+                  {/* Sliding Panel */}
+                  <div className={`absolute inset-0 bg-purple-700/95 backdrop-blur-sm transform transition-transform duration-300 ${
                     selectedGallery === item.id ? 'translate-y-0' : 'translate-y-full'
                   }`}>
                     <div className="p-6 h-full flex flex-col justify-center text-center">
                       <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                      <p className="text-gray-200 leading-relaxed">{item.description}</p>
+                      <p className="text-gray-100 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -303,20 +329,21 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-100/70 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
+              <span className="bg-gradient-to-r from-purple-600 to-gray-700 bg-clip-text text-transparent drop-shadow-lg">
                 CONTACT US
               </span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-purple-400/40">
-                <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
+              <div className="bg-white/70 backdrop-blur-md rounded-xl p-6 border border-purple-200/40 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -325,7 +352,7 @@ const Index = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-purple-400"
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50/70 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-purple-500"
                         placeholder="Your name"
                         required
                       />
@@ -336,7 +363,7 @@ const Index = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-purple-400"
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50/70 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-purple-500"
                         placeholder="your.email@example.com"
                         required
                       />
@@ -349,7 +376,7 @@ const Index = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-purple-400"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50/70 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-purple-500"
                       placeholder="+91 XXXXX XXXXX"
                       required
                     />
@@ -361,7 +388,7 @@ const Index = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-purple-400 resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50/70 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-purple-500 resize-none"
                       placeholder="Your message..."
                       required
                     ></textarea>
@@ -369,7 +396,7 @@ const Index = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 rounded-lg font-bold text-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 hover:scale-105"
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     Send Message
                   </button>
@@ -377,39 +404,40 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Join the Movement */}
             <div className="space-y-6">
-              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-purple-400/40">
-                <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
-                <p className="text-gray-300 mb-6">Ready to be part of Puri's most vibrant dance community?</p>
+              <div className="bg-white/70 backdrop-blur-md rounded-xl p-6 border border-purple-200/40 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Join The Movement</h3>
+                <p className="text-gray-600 mb-6">Ready to be part of Puri's most vibrant dance community?</p>
                 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-purple-400" />
-                    <span className="text-gray-300 text-sm">scenesariba@gmail.com</span>
+                    <Mail className="w-5 h-5 text-purple-600" />
+                    <span className="text-gray-600 text-sm">scenesariba@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-purple-400" />
-                    <span className="text-gray-300 text-sm">+91 98765 43210</span>
+                    <Phone className="w-5 h-5 text-purple-600" />
+                    <span className="text-gray-600 text-sm">+91 98765 43210</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-purple-400" />
-                    <span className="text-gray-300 text-sm">Puri Beach, Odisha</span>
+                    <MapPin className="w-5 h-5 text-purple-600" />
+                    <span className="text-gray-600 text-sm">Puri Beach, Odisha</span>
                   </div>
                 </div>
 
                 <div className="flex space-x-3 mb-6">
-                  <a href="#" className="bg-purple-500 p-2 rounded-lg hover:bg-purple-600 transition-all duration-300">
+                  <a href="#" className="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md">
                     <Instagram className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-purple-500 p-2 rounded-lg hover:bg-purple-600 transition-all duration-300">
+                  <a href="#" className="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md">
                     <Youtube className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-purple-500 p-2 rounded-lg hover:bg-purple-600 transition-all duration-300">
+                  <a href="#" className="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md">
                     <Music className="w-5 h-5 text-white" />
                   </a>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 rounded-lg font-bold hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
+                <button className="w-full bg-gradient-to-r from-purple-600 to-gray-700 text-white py-3 rounded-lg font-bold hover:from-purple-700 hover:to-gray-800 transition-all duration-300 shadow-lg">
                   Join Now
                 </button>
               </div>
