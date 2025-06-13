@@ -109,11 +109,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800/60 via-purple-900/30 to-gray-900/50"></div>
-      </div>
+      {/* Video Background covering top corners */}
+      <VideoPlayer />
+      
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/40 via-gray-900/60 to-gray-900/90"></div>
 
       {/* Navigation */}
       <nav className="relative z-50 flex items-center justify-between p-6 lg:px-12">
@@ -136,28 +136,16 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen text-center px-6">
-        {/* Video Background for Home Section Only */}
-        <div className="absolute inset-0 z-0">
-          <VideoPlayer />
-          <div className="w-full h-full bg-gray-700/70 backdrop-blur-md flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center">
-                <Youtube className="w-8 h-8 text-purple-400" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-4xl relative z-10">
+      <section id="home" className="relative z-20 flex items-center justify-center min-h-screen text-center px-6">
+        <div className="max-w-4xl relative z-30">
           <div className="mb-2">
             <img
               src="/lovable-uploads/744ee8a6-9231-478c-96ee-9e02ce62a74f.png"
               alt="Scene Sariba Logo"
-              className="mx-auto w-65 h-auto relative z-20"
+              className="mx-auto w-65 h-auto relative z-40"
             />
           </div>
-          <p className="text-xl lg:text-2xl text-gray-200 mt-0 mb-4 font-medium drop-shadow-lg relative z-20">
+          <p className="text-xl lg:text-2xl text-gray-200 mt-0 mb-4 font-medium drop-shadow-lg relative z-40">
             Where Culture Meets Rhythm in Puri
           </p>
         </div>

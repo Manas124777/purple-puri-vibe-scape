@@ -3,7 +3,7 @@ import React from 'react';
 
 const VideoPlayer = () => {
   return (
-    <div className="w-full h-full">
+    <div className="absolute top-0 left-0 w-full h-screen">
       <video
         className="w-full h-full object-cover"
         autoPlay
