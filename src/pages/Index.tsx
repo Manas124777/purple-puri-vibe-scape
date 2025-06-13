@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
@@ -160,16 +161,16 @@ const Index = () => {
       </section>
 
       {/* Professional Transition Section */}
-      <div className="relative z-10 h-40 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
+      <div className="relative z-10 h-20 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-5 right-20 w-20 h-20 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
+          <div className="absolute bottom-10 right-20 w-12 h-12 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-10 h-10 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
         </div>
       </div>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-24 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
+      <section id="about" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
           <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform -rotate-12" style={{ animationDelay: '2s' }}></div>
@@ -177,7 +178,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Story</span>
             </div>
@@ -232,7 +233,7 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-24 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
+      <section id="artists" className="relative z-10 py-16 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-10 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
           <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
@@ -240,7 +241,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Meet Our Team</span>
             </div>
@@ -292,7 +293,7 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-24 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="gallery" className="relative z-10 py-16 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-16 left-12 w-36 h-36 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
           <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
@@ -300,7 +301,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Moments</span>
             </div>
@@ -349,7 +350,7 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-24 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-16 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
           <div className="absolute bottom-16 left-20 w-28 h-28 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
@@ -357,7 +358,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Get In Touch</span>
             </div>
