@@ -1,9 +1,7 @@
-
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Calendar, MapPin, Clock, Users, Instagram, Youtube, Music, Mail, Phone, User, MessageSquare } from 'lucide-react';
+import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
-import VideoPlayer from '../components/ui/VideoPlayer'; 
+import VideoPlayer from '../components/ui/VideoPlayer';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
