@@ -109,11 +109,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
-      {/* Video Background covering top corners */}
+      {/* Video Background covering top corners and extending down */}
       <VideoPlayer />
       
       {/* Overlay for better readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/40 via-gray-900/60 to-gray-900/90"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/30 via-gray-900/50 to-gray-900/80"></div>
 
       {/* Navigation */}
       <nav className="relative z-50 flex items-center justify-between p-6 lg:px-12">
@@ -162,16 +162,16 @@ const Index = () => {
 
       {/* About Section */}
       <section id="about" className="relative z-10 py-20 px-6 lg:px-12 bg-gray-700/70 backdrop-blur-md">
-        {/* Animated Background Elements */}
+        {/* 3D Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform -rotate-12" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in transform hover:scale-105 transition-transform duration-300">
               <span className="bg-gradient-to-r from-orange-400 to-gray-200 bg-clip-text text-transparent drop-shadow-lg">
                 ABOUT
               </span>
@@ -179,7 +179,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-gray-700/70 backdrop-blur-md rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+            <div className="bg-gray-700/70 backdrop-blur-md rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 hover:rotate-1 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
               <h3 className="text-3xl font-bold text-gray-100 mb-6">The Addyction - Adarsh Mishra</h3>
               <p className="text-gray-200 leading-relaxed mb-4">
                 Adarsh Mishra, known as "The Addyction," is the visionary founder of Scene Sariba. With over 8 years of experience in the dance industry, he has revolutionized the street dance culture in Puri, Odisha.
@@ -192,7 +192,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="bg-gray-700/70 backdrop-blur-md rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+            <div className="bg-gray-700/70 backdrop-blur-md rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 hover:-rotate-1 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
               <h3 className="text-3xl font-bold text-gray-100 mb-6">Scene Sariba Jam</h3>
               <p className="text-gray-200 leading-relaxed mb-4">
                 Scene Sariba Jam is more than just a dance battle - it's a cultural celebration that brings together the best dancers from across India. This flagship event showcases the perfect fusion of traditional Odissi dance with modern street styles.
@@ -210,16 +210,16 @@ const Index = () => {
 
       {/* Artists Section */}
       <section id="artists" className="relative z-10 py-20 px-6 lg:px-12 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
-        {/* Animated Background Elements */}
+        {/* 3D Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-32 left-16 w-28 h-28 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-10 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
+          <div className="absolute bottom-32 left-16 w-28 h-28 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in transform hover:scale-105 transition-transform duration-300">
               <span className="bg-gradient-to-r from-orange-400 to-gray-200 bg-clip-text text-transparent drop-shadow-lg">
                 ARTISTS
               </span>
@@ -233,11 +233,11 @@ const Index = () => {
             {artists.map((artist, index) => (
               <div 
                 key={artist.id} 
-                className="relative group cursor-pointer animate-fade-in"
+                className="relative group cursor-pointer animate-fade-in transform hover:scale-110 hover:rotate-3 transition-all duration-300"
                 onClick={() => setSelectedArtist(selectedArtist === artist.id ? null : artist.id)}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 hover:shadow-2xl hover:shadow-purple-500/30">
                   <div className="w-full h-64 bg-black"></div>
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent transition-all duration-300 ${
@@ -268,16 +268,16 @@ const Index = () => {
 
       {/* Gallery Section */}
       <section id="gallery" className="relative z-10 py-20 px-6 lg:px-12 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
-        {/* Animated Background Elements */}
+        {/* 3D Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-16 left-12 w-36 h-36 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-2/3 left-1/4 w-16 h-16 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-16 left-12 w-36 h-36 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-2/3 left-1/4 w-16 h-16 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '3s' }}></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in transform hover:scale-105 transition-transform duration-300">
               <span className="bg-gradient-to-r from-orange-400 to-gray-200 bg-clip-text text-transparent drop-shadow-lg">
                 GALLERY
               </span>
@@ -291,11 +291,11 @@ const Index = () => {
             {galleryImages.map((item, index) => (
               <div 
                 key={item.id} 
-                className="relative group cursor-pointer animate-fade-in"
+                className="relative group cursor-pointer animate-fade-in transform hover:scale-105 hover:-rotate-2 transition-all duration-300"
                 onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30">
+                <div className="relative overflow-hidden rounded-xl bg-slate-800/80 border border-purple-400/40 hover:shadow-2xl hover:shadow-orange-500/30">
                   <div className="w-full h-64 bg-black"></div>
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
@@ -323,16 +323,16 @@ const Index = () => {
 
       {/* Contact Us Section */}
       <section id="contact" className="relative z-10 py-20 px-6 lg:px-12 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
-        {/* Animated Background Elements */}
+        {/* 3D Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-16 left-20 w-28 h-28 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-20 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
+          <div className="absolute bottom-16 left-20 w-28 h-28 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-45" style={{ animationDelay: '0.5s' }}></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6 animate-fade-in transform hover:scale-105 transition-transform duration-300">
               <span className="bg-gradient-to-r from-orange-400 to-gray-200 bg-clip-text text-transparent drop-shadow-lg">
                 CONTACT US
               </span>
@@ -341,7 +341,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-purple-400/40 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-purple-400/40 transform hover:scale-105 hover:rotate-1 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
                 <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -404,7 +404,7 @@ const Index = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-purple-400/40 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+              <div className="bg-gray-700/70 backdrop-blur-md rounded-xl p-6 border border-purple-400/40 transform hover:scale-105 hover:-rotate-1 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
                 <p className="text-gray-300 mb-6">Ready to be part of Puri's most vibrant dance community?</p>
                 
