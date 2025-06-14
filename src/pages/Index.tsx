@@ -1,8 +1,8 @@
 
+
 import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
-import VideoPlayer from '../components/ui/VideoPlayer';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Index = () => {
@@ -164,8 +164,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
-      {/* Video Background covering top corners and extending down */}
-      <VideoPlayer />
+      {/* Video Background Section - Add your video here */}
+      <div className="absolute top-0 left-0 w-full h-[120vh]">
+        {/* Your video will go here */}
+      </div>
       
       {/* Overlay for better readability */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/70"></div>
@@ -574,3 +576,4 @@ const Index = () => {
 };
 
 export default Index;
+
