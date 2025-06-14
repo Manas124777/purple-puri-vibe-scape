@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X } from 'lucide-react';
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { Dialog, DialogContent, DialogClose } from '../components/ui/dialog';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
@@ -21,6 +22,7 @@ const Index = () => {
   const [selectedArtist, setSelectedArtist] = useState<number | null>(null);
   const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -119,49 +121,41 @@ const Index = () => {
     {
       id: 1,
       title: "Scene Sariba Jam 2023",
-      description: "Epic battle moments from our flagship event",
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 2,
       title: "Summer Concert",
-      description: "Energetic performances under the stars",
       image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 3,
       title: "Community Gathering",
-      description: "Bringing dancers together from across India",
       image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 4,
       title: "Street Battles",
-      description: "Raw energy and pure talent on display",
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 5,
       title: "Cultural Fusion",
-      description: "Traditional meets contemporary dance",
       image: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 6,
       title: "Beach Vibes",
-      description: "Dancing with the waves at Puri Beach",
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 7,
       title: "Workshop Session",
-      description: "Learning new moves together",
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
       id: 8,
       title: "Night Performance",
-      description: "Electric atmosphere under the lights",
       image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
   ];
@@ -402,24 +396,22 @@ const Index = () => {
                 >
                   <div 
                     className="relative group cursor-pointer h-64 transform transition-all duration-500 hover:scale-110"
-                    onClick={() => setSelectedGallery(item.id)}
+                    onClick={() => setSelectedImage(item.image)}
                   >
                     <div className="relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden">
-                      {/* Main image container */}
-                      <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transition-all duration-500">
-                        <img 
-                          src={item.image} 
-                          alt={item.title}
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
+                      {/* Placeholder container */}
+                      <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transition-all duration-500 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div className="w-8 h-8 bg-orange-500/40 rounded-full"></div>
+                          </div>
+                          <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                        </div>
                       </div>
                       
-                      {/* Overlay with info */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-500 rounded-2xl">
-                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                          <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                          <p className="text-gray-300 text-sm">{item.description}</p>
-                        </div>
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl flex items-center justify-center">
+                        <div className="text-orange-300 text-sm font-semibold">Click to view</div>
                       </div>
                     </div>
                   </div>
@@ -429,6 +421,22 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl w-full h-auto p-0 bg-transparent border-none">
+          <div className="relative">
+            <img 
+              src={selectedImage || ""} 
+              alt="Gallery Image"
+              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+            />
+            <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
+              <X className="w-6 h-6" />
+            </DialogClose>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Contact Form Section */}
       <section className="relative z-10 py-16 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
