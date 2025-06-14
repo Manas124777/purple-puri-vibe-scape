@@ -160,7 +160,7 @@ const Index = () => {
       </section>
 
       {/* Professional Transition Section */}
-      <div className="relative z-10 h-16 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
+      <div className="relative z-10 h-8 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-2 right-20 w-16 h-16 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
           <div className="absolute bottom-2 right-20 w-10 h-10 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
@@ -169,7 +169,7 @@ const Index = () => {
       </div>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-12 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
+      <section id="about" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-12 left-10 w-24 h-24 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
           <div className="absolute bottom-12 right-10 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform -rotate-12" style={{ animationDelay: '2s' }}></div>
@@ -177,7 +177,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Story</span>
             </div>
@@ -191,8 +191,8 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-rotate-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-100 mb-2">The Addyction</h3>
                 <p className="text-orange-300 font-semibold text-lg">Adarsh Mishra - Founder</p>
@@ -210,7 +210,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 hover:rotate-1">
+            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-100 mb-2">Scene Sariba Jam</h3>
                 <p className="text-orange-300 font-semibold text-lg">Our Flagship Event</p>
@@ -232,7 +232,7 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-12 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
+      <section id="artists" className="relative z-10 py-8 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-8 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
           <div className="absolute bottom-16 right-16 w-20 h-20 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
@@ -240,7 +240,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Meet Our Team</span>
             </div>
@@ -292,7 +292,7 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-12 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="gallery" className="relative z-10 py-8 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-12 left-10 w-28 h-28 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
           <div className="absolute bottom-12 right-16 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
@@ -300,7 +300,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Moments</span>
             </div>
@@ -349,7 +349,7 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-12 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-8 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
           <div className="absolute bottom-12 left-16 w-22 h-22 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
@@ -357,7 +357,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Get In Touch</span>
             </div>
@@ -371,9 +371,9 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:rotate-1">
+              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/40">
                 <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -440,24 +440,24 @@ const Index = () => {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/40 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 hover:-rotate-1">
+              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/40">
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">Ready to be part of Puri's most vibrant dance community?</p>
                 
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center space-x-3 transition-all duration-300 hover:transform hover:translate-x-2">
+                  <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
                       <Mail className="w-5 h-5 text-orange-400" />
                     </div>
                     <span className="text-gray-300">scenesariba@gmail.com</span>
                   </div>
-                  <div className="flex items-center space-x-3 transition-all duration-300 hover:transform hover:translate-x-2">
+                  <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
                       <Phone className="w-5 h-5 text-orange-400" />
                     </div>
                     <span className="text-gray-300">+91 98765 43210</span>
                   </div>
-                  <div className="flex items-center space-x-3 transition-all duration-300 hover:transform hover:translate-x-2">
+                  <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-orange-400" />
                     </div>
