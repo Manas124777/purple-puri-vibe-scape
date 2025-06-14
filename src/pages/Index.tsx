@@ -3,7 +3,7 @@ import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X } from 'lucide-
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogClose } from '../components/ui/dialog';
-import VideoPlayer from '../components/ui/VideoPlayer';
+import VideoPlayer from '@/components/ui/VideoPlayer';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
