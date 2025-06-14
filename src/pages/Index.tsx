@@ -391,15 +391,14 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-900/95 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
-          <div className="absolute bottom-12 left-16 w-22 h-22 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-45" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-purple-500/5 to-orange-500/5 rounded-full animate-pulse transform rotate-30"></div>
+          <div className="absolute bottom-12 left-16 w-22 h-22 bg-gradient-to-r from-orange-500/8 to-purple-500/8 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div ref={contactTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${contactTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div ref={contactTitle.ref} className={`text-center mb-16 transition-all duration-1000 ${contactTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Get In Touch</span>
             </div>
@@ -408,124 +407,167 @@ const Index = () => {
                 CONTACT US
               </span>
             </h2>
-          </div>
-
-          <div ref={contactDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${contactDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Ready to join the movement? Let's connect and create something extraordinary together
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20">
-                <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-gray-300 font-medium mb-2">Your Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
-                        placeholder="Enter your full name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-300 font-medium mb-2">Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
-                        placeholder="your.email@example.com"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
-                      placeholder="+91 XXXXX XXXXX"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2">Message</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 resize-none transition-all duration-300"
-                      placeholder="Tell us about your interest in Scene Sariba..."
-                      required
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/20">
-                <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">Ready to be part of Puri's most vibrant dance community?</p>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-orange-400" />
-                    </div>
-                    <span className="text-gray-300">scenesariba@gmail.com</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-orange-400" />
-                    </div>
-                    <span className="text-gray-300">+91 98765 43210</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-orange-400" />
-                    </div>
-                    <span className="text-gray-300">Puri Beach, Odisha</span>
-                  </div>
+          {/* Footer-style Contact Layout */}
+          <div ref={contactDesc.ref} className={`transition-all duration-1000 ${contactDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              
+              {/* Scene Sariba Brand Column */}
+              <div className="lg:col-span-1">
+                <div className="mb-6">
+                  <h3 className="text-3xl font-black mb-4">
+                    <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
+                      SCENE SARIBA
+                    </span>
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    Pioneering the dance revolution in Puri, where tradition meets innovation. Join our vibrant community of artists.
+                  </p>
                 </div>
 
+                {/* Social Media Icons */}
                 <div className="flex space-x-3 mb-6">
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
                     <Instagram className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
                     <Youtube className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
                     <Music className="w-5 h-5 text-white" />
                   </a>
                 </div>
+              </div>
 
-                <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40">
+              {/* Navigation Links */}
+              <div className="lg:col-span-1">
+                <h4 className="text-orange-400 font-bold text-lg mb-6 uppercase tracking-wide">Navigation</h4>
+                <ul className="space-y-3">
+                  {['Home', 'About', 'Artists', 'Gallery', 'Events'].map((item) => (
+                    <li key={item}>
+                      <button 
+                        onClick={() => scrollToSection(item.toLowerCase())}
+                        className="text-gray-300 hover:text-orange-400 transition-colors duration-300 text-left"
+                      >
+                        {item}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Events Column */}
+              <div className="lg:col-span-1">
+                <h4 className="text-orange-400 font-bold text-lg mb-6 uppercase tracking-wide">Events</h4>
+                <ul className="space-y-3">
+                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Scene Sariba Jam</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Street Battles</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Workshops</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Cultural Fusion</a></li>
+                </ul>
+              </div>
+
+              {/* Join The Movement */}
+              <div className="lg:col-span-1">
+                <h4 className="text-orange-400 font-bold text-lg mb-6 uppercase tracking-wide">Join The Movement</h4>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-orange-400" />
+                    <span className="text-gray-300 text-sm">scenesariba@gmail.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-orange-400" />
+                    <span className="text-gray-300 text-sm">+91 98765 43210</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-orange-400" />
+                    <span className="text-gray-300 text-sm">Puri Beach, Odisha</span>
+                  </div>
+                </div>
+
+                <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-6 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40">
                   Join Scene Sariba
                 </button>
               </div>
+            </div>
+
+            {/* Contact Form Section */}
+            <div className="bg-gray-800/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20 mb-8">
+              <h3 className="text-2xl font-bold text-gray-100 mb-6 text-center">Send Us a Message</h3>
+              <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <label className="block text-gray-300 font-medium mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
+                    placeholder="+91 XXXXX XXXXX"
+                    required
+                  />
+                </div>
+
+                <div className="mb-6">
+                  <label className="block text-gray-300 font-medium mb-2">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 resize-none transition-all duration-300"
+                    placeholder="Tell us about your interest in Scene Sariba..."
+                    required
+                  ></textarea>
+                </div>
+
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-8 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            {/* Bottom Copyright */}
+            <div className="border-t border-gray-700/50 pt-8 text-center">
+              <p className="text-gray-400 text-sm">
+                © 2024 Scene Sariba. All rights reserved. | Puri's Premier Dance Community
+              </p>
             </div>
           </div>
         </div>
