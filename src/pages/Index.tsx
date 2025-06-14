@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
@@ -161,44 +160,44 @@ const Index = () => {
       </section>
 
       {/* Professional Transition Section */}
-      <div className="relative z-10 h-20 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
+      <div className="relative z-10 h-16 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-5 right-20 w-20 h-20 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
-          <div className="absolute bottom-10 right-20 w-12 h-12 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/3 right-1/3 w-10 h-10 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-2 right-20 w-16 h-16 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
+          <div className="absolute bottom-2 right-20 w-10 h-10 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
         </div>
       </div>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
+      <section id="about" className="relative z-10 py-12 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform -rotate-12" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-12 left-10 w-24 h-24 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
+          <div className="absolute bottom-12 right-10 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform -rotate-12" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-12 h-12 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Story</span>
             </div>
-            <h2 className="text-6xl lg:text-7xl font-black mb-8 animate-fade-in transform hover:scale-105 transition-transform duration-300">
-              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6">
+              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 ABOUT US
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Pioneering the dance revolution in Puri, where tradition meets innovation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-10 border border-purple-400/30 transform hover:scale-105 hover:rotate-1 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-rotate-1">
               <div className="mb-6">
-                <h3 className="text-4xl font-bold text-gray-100 mb-2">The Addyction</h3>
+                <h3 className="text-3xl font-bold text-gray-100 mb-2">The Addyction</h3>
                 <p className="text-orange-300 font-semibold text-lg">Adarsh Mishra - Founder</p>
               </div>
-              <div className="space-y-6 text-gray-200 leading-relaxed text-lg">
+              <div className="space-y-4 text-gray-200 leading-relaxed">
                 <p>
                   Adarsh Mishra, known as "The Addyction," is the visionary founder of Scene Sariba. With over 8 years of professional experience, he has revolutionized street dance culture in Puri, Odisha.
                 </p>
@@ -211,12 +210,12 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-10 border border-purple-400/30 transform hover:scale-105 hover:-rotate-1 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20">
+            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 hover:rotate-1">
               <div className="mb-6">
-                <h3 className="text-4xl font-bold text-gray-100 mb-2">Scene Sariba Jam</h3>
+                <h3 className="text-3xl font-bold text-gray-100 mb-2">Scene Sariba Jam</h3>
                 <p className="text-orange-300 font-semibold text-lg">Our Flagship Event</p>
               </div>
-              <div className="space-y-6 text-gray-200 leading-relaxed text-lg">
+              <div className="space-y-4 text-gray-200 leading-relaxed">
                 <p>
                   Scene Sariba Jam transcends traditional dance battles - it's a cultural celebration uniting India's finest dancers with Odisha's rich heritage.
                 </p>
@@ -233,24 +232,24 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-16 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
+      <section id="artists" className="relative z-10 py-12 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-8 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
+          <div className="absolute bottom-16 right-16 w-20 h-20 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Meet Our Team</span>
             </div>
-            <h2 className="text-6xl lg:text-7xl font-black mb-8 animate-fade-in transform hover:scale-105 transition-transform duration-300">
-              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6">
+              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 ARTISTS
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               The passionate artists who bring Scene Sariba's vision to life
             </p>
           </div>
@@ -259,7 +258,7 @@ const Index = () => {
             {artists.map((artist, index) => (
               <div 
                 key={artist.id} 
-                className="relative group cursor-pointer animate-fade-in transform hover:scale-110 hover:rotate-3 transition-all duration-500"
+                className="relative group cursor-pointer transform hover:scale-110 transition-all duration-500"
                 onClick={() => setSelectedArtist(selectedArtist === artist.id ? null : artist.id)}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
@@ -293,24 +292,24 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-16 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="gallery" className="relative z-10 py-12 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-16 left-12 w-36 h-36 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-2/3 left-1/4 w-16 h-16 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-12 left-10 w-28 h-28 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
+          <div className="absolute bottom-12 right-16 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-2/3 left-1/4 w-12 h-12 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '3s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Moments</span>
             </div>
-            <h2 className="text-6xl lg:text-7xl font-black mb-8 animate-fade-in transform hover:scale-105 transition-transform duration-300">
-              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6">
+              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 GALLERY
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Capturing the energy, passion, and cultural fusion of Scene Sariba events
             </p>
           </div>
@@ -319,7 +318,7 @@ const Index = () => {
             {galleryImages.map((item, index) => (
               <div 
                 key={item.id} 
-                className="relative group cursor-pointer animate-fade-in transform hover:scale-105 hover:-rotate-2 transition-all duration-500"
+                className="relative group cursor-pointer transform hover:scale-110 transition-all duration-500"
                 onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
@@ -350,54 +349,54 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-16 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-12 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
-          <div className="absolute bottom-16 left-20 w-28 h-28 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-45" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
+          <div className="absolute bottom-12 left-16 w-22 h-22 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-45" style={{ animationDelay: '0.5s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Get In Touch</span>
             </div>
-            <h2 className="text-6xl lg:text-7xl font-black mb-8 animate-fade-in transform hover:scale-105 transition-transform duration-300">
-              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="text-5xl lg:text-6xl font-black mb-6">
+              <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 CONTACT US
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Ready to join the movement? Let's connect and create something extraordinary together
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-10 border border-purple-400/40 transform hover:scale-105 hover:rotate-1 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
-                <h3 className="text-3xl font-bold text-gray-100 mb-8">Send Message</h3>
+              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:rotate-1">
+                <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-gray-300 font-medium mb-3 text-lg">Your Name</label>
+                      <label className="block text-gray-300 font-medium mb-2">Your Name</label>
                       <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-6 py-4 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300 text-lg"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
                         placeholder="Enter your full name"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 font-medium mb-3 text-lg">Email Address</label>
+                      <label className="block text-gray-300 font-medium mb-2">Email Address</label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-6 py-4 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300 text-lg"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
                         placeholder="your.email@example.com"
                         required
                       />
@@ -405,26 +404,26 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <label className="block text-gray-300 font-medium mb-3 text-lg">Phone Number</label>
+                    <label className="block text-gray-300 font-medium mb-2">Phone Number</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300 text-lg"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
                       placeholder="+91 XXXXX XXXXX"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-300 font-medium mb-3 text-lg">Message</label>
+                    <label className="block text-gray-300 font-medium mb-2">Message</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={5}
-                      className="w-full px-6 py-4 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 resize-none transition-all duration-300 text-lg"
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 resize-none transition-all duration-300"
                       placeholder="Tell us about your interest in Scene Sariba..."
                       required
                     ></textarea>
@@ -432,7 +431,7 @@ const Index = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-xl font-bold text-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40"
+                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40"
                   >
                     Send Message
                   </button>
@@ -441,44 +440,44 @@ const Index = () => {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/40 transform hover:scale-105 hover:-rotate-1 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20">
-                <h3 className="text-3xl font-bold text-gray-100 mb-6">Join The Movement</h3>
-                <p className="text-gray-300 mb-8 text-lg leading-relaxed">Ready to be part of Puri's most vibrant dance community?</p>
+              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/40 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 hover:-rotate-1">
+                <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">Ready to be part of Puri's most vibrant dance community?</p>
                 
-                <div className="space-y-6 mb-8">
-                  <div className="flex items-center space-x-4 transition-all duration-300 hover:transform hover:translate-x-2">
-                    <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-orange-400" />
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center space-x-3 transition-all duration-300 hover:transform hover:translate-x-2">
+                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-orange-400" />
                     </div>
-                    <span className="text-gray-300 text-lg">scenesariba@gmail.com</span>
+                    <span className="text-gray-300">scenesariba@gmail.com</span>
                   </div>
-                  <div className="flex items-center space-x-4 transition-all duration-300 hover:transform hover:translate-x-2">
-                    <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-orange-400" />
+                  <div className="flex items-center space-x-3 transition-all duration-300 hover:transform hover:translate-x-2">
+                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-orange-400" />
                     </div>
-                    <span className="text-gray-300 text-lg">+91 98765 43210</span>
+                    <span className="text-gray-300">+91 98765 43210</span>
                   </div>
-                  <div className="flex items-center space-x-4 transition-all duration-300 hover:transform hover:translate-x-2">
-                    <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-orange-400" />
+                  <div className="flex items-center space-x-3 transition-all duration-300 hover:transform hover:translate-x-2">
+                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-orange-400" />
                     </div>
-                    <span className="text-gray-300 text-lg">Puri Beach, Odisha</span>
+                    <span className="text-gray-300">Puri Beach, Odisha</span>
                   </div>
                 </div>
 
-                <div className="flex space-x-4 mb-8">
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
-                    <Instagram className="w-6 h-6 text-white" />
+                <div className="flex space-x-3 mb-6">
+                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                    <Instagram className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
-                    <Youtube className="w-6 h-6 text-white" />
+                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                    <Youtube className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
-                    <Music className="w-6 h-6 text-white" />
+                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                    <Music className="w-5 h-5 text-white" />
                   </a>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-xl font-bold text-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40">
+                <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40">
                   Join Scene Sariba
                 </button>
               </div>
