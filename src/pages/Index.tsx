@@ -117,46 +117,38 @@ const Index = () => {
     }
   ];
 
-  const galleryImages = [
+  const galleryItems = [
     {
       id: 1,
-      title: "Scene Sariba Jam 2023",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Scene Sariba Jam 2023"
     },
     {
       id: 2,
-      title: "Summer Concert",
-      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Summer Concert"
     },
     {
       id: 3,
-      title: "Community Gathering",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Community Gathering"
     },
     {
       id: 4,
-      title: "Street Battles",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Street Battles"
     },
     {
       id: 5,
-      title: "Cultural Fusion",
-      image: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Cultural Fusion"
     },
     {
       id: 6,
-      title: "Beach Vibes",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Beach Vibes"
     },
     {
       id: 7,
-      title: "Workshop Session",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Workshop Session"
     },
     {
       id: 8,
-      title: "Night Performance",
-      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      title: "Night Performance"
     }
   ];
 
@@ -385,7 +377,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {galleryImages.map((item, index) => {
+            {galleryItems.map((item, index) => {
               const galleryAnimation = useScrollAnimation(0.3, index * 100);
               
               return (
@@ -395,23 +387,18 @@ const Index = () => {
                   className={`relative transition-all duration-700 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
                   <div 
-                    className="relative group cursor-pointer h-64 transform transition-all duration-500 hover:scale-110"
-                    onClick={() => setSelectedImage(item.image)}
+                    className="relative group cursor-pointer h-64 transform transition-all duration-300 hover:scale-105"
+                    onClick={() => setSelectedImage(`gallery-${item.id}`)}
                   >
-                    <div className="relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden">
-                      {/* Placeholder container */}
-                      <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transition-all duration-500 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <div className="w-8 h-8 bg-orange-500/40 rounded-full"></div>
-                          </div>
+                    <div className="relative w-full h-full bg-black border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden">
+                      {/* Completely black container */}
+                      <div className="w-full h-full bg-black rounded-2xl"></div>
+                      
+                      {/* Title overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 transition-all duration-500 rounded-2xl flex items-end justify-center">
+                        <div className="p-4 text-center">
                           <h3 className="text-lg font-bold text-white">{item.title}</h3>
                         </div>
-                      </div>
-                      
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl flex items-center justify-center">
-                        <div className="text-orange-300 text-sm font-semibold">Click to view</div>
                       </div>
                     </div>
                   </div>
@@ -426,11 +413,9 @@ const Index = () => {
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl w-full h-auto p-0 bg-transparent border-none">
           <div className="relative">
-            <img 
-              src={selectedImage || ""} 
-              alt="Gallery Image"
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-            />
+            <div className="w-full h-96 bg-black rounded-lg flex items-center justify-center">
+              <p className="text-white text-xl">Gallery Image Placeholder</p>
+            </div>
             <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
               <X className="w-6 h-6" />
             </DialogClose>
