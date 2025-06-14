@@ -391,7 +391,7 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-900/95 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-purple-500/5 to-orange-500/5 rounded-full animate-pulse transform rotate-30"></div>
           <div className="absolute bottom-12 left-16 w-22 h-22 bg-gradient-to-r from-orange-500/8 to-purple-500/8 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
@@ -414,7 +414,7 @@ const Index = () => {
 
           {/* Footer-style Contact Layout */}
           <div ref={contactDesc.ref} className={`transition-all duration-1000 ${contactDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               
               {/* Scene Sariba Brand Column */}
               <div className="lg:col-span-1">
@@ -437,38 +437,7 @@ const Index = () => {
                   <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
                     <Youtube className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
-                    <Music className="w-5 h-5 text-white" />
-                  </a>
                 </div>
-              </div>
-
-              {/* Navigation Links */}
-              <div className="lg:col-span-1">
-                <h4 className="text-orange-400 font-bold text-lg mb-6 uppercase tracking-wide">Navigation</h4>
-                <ul className="space-y-3">
-                  {['Home', 'About', 'Artists', 'Gallery', 'Events'].map((item) => (
-                    <li key={item}>
-                      <button 
-                        onClick={() => scrollToSection(item.toLowerCase())}
-                        className="text-gray-300 hover:text-orange-400 transition-colors duration-300 text-left"
-                      >
-                        {item}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Events Column */}
-              <div className="lg:col-span-1">
-                <h4 className="text-orange-400 font-bold text-lg mb-6 uppercase tracking-wide">Events</h4>
-                <ul className="space-y-3">
-                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Scene Sariba Jam</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Street Battles</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Workshops</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-orange-400 transition-colors duration-300">Cultural Fusion</a></li>
-                </ul>
               </div>
 
               {/* Join The Movement */}
@@ -496,7 +465,7 @@ const Index = () => {
             </div>
 
             {/* Contact Form Section */}
-            <div className="bg-gray-800/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20 mb-8">
+            <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20 mb-8">
               <h3 className="text-2xl font-bold text-gray-100 mb-6 text-center">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
