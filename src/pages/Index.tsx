@@ -393,7 +393,6 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {galleryImages.map((item, index) => {
               const galleryAnimation = useScrollAnimation(0.3, index * 100);
-              const isOpen = selectedGallery === item.id;
               
               return (
                 <div 
@@ -402,28 +401,24 @@ const Index = () => {
                   className={`relative transition-all duration-700 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
                   <div 
-                    className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${isOpen ? 'h-80' : 'h-64'}`}
-                    onClick={() => setSelectedGallery(isOpen ? null : item.id)}
+                    className="relative group cursor-pointer h-64 transform transition-all duration-500 hover:scale-110"
+                    onClick={() => setSelectedGallery(item.id)}
                   >
-                    <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${isOpen ? 'transform scale-105 z-30' : ''}`}>
+                    <div className="relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden">
                       {/* Main image container */}
-                      <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transition-all duration-500 ${isOpen ? 'h-1/2' : 'h-full'}`}>
+                      <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transition-all duration-500">
+                        <img 
+                          src={item.image} 
+                          alt={item.title}
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
                       </div>
                       
-                      {/* Overlay with basic info */}
-                      <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent transition-all duration-500 rounded-2xl ${isOpen ? 'opacity-80' : 'opacity-60 group-hover:opacity-80'}`}>
-                        <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${isOpen ? 'transform translate-y-0' : ''}`}>
+                      {/* Overlay with info */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-500 rounded-2xl">
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
                           <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
                           <p className="text-gray-300 text-sm">{item.description}</p>
-                        </div>
-                      </div>
-
-                      {/* Expanded content box */}
-                      <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${isOpen ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
-                        <div className="space-y-2">
-                          <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                          <p className="text-gray-200 text-sm leading-relaxed">{item.description}</p>
-                          <div className="text-orange-300 text-xs">Click to view more details</div>
                         </div>
                       </div>
                     </div>
