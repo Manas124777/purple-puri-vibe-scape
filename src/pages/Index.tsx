@@ -200,7 +200,7 @@ const Index = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-gray-100 hover:text-orange-300 transition-all duration-300 p-2 hover:scale-110 hover:bg-gray-800/30 rounded-lg relative z-50"
+          className="md:hidden text-gray-100 hover:text-orange-300 transition-all duration-300 p-2 hover:scale-110 hover:bg-gray-800/30 rounded-lg"
         >
           <div className="relative w-6 h-6">
             <Menu className={`w-6 h-6 absolute transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`} />
@@ -208,15 +208,15 @@ const Index = () => {
           </div>
         </button>
 
-        {/* Mobile Menu Dropdown - Positioned in the marked area */}
-        <div className={`fixed top-16 left-4 right-4 bg-gray-800/95 backdrop-blur-lg border border-gray-600/50 rounded-xl shadow-2xl md:hidden transition-all duration-500 z-40 ${mobileMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-4 pointer-events-none'}`}>
-          <div className="py-3">
+        {/* Mobile Menu Dropdown */}
+        <div className={`absolute top-full right-4 mt-2 bg-gray-800/95 backdrop-blur-lg border border-gray-600/50 rounded-xl shadow-2xl md:hidden transition-all duration-500 origin-top-right ${mobileMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
+          <div className="py-2">
             {['home','about','artists','gallery','contact'].map((sec, index) => (
               <button
                 key={sec}
                 onClick={() => handleNavClick(sec)}
-                className={`w-full text-left text-gray-100 hover:text-orange-300 transition-all duration-300 font-semibold text-base tracking-wide uppercase px-6 py-4 hover:bg-gray-700/50 first:rounded-t-xl last:rounded-b-xl ${mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
-                style={{ transitionDelay: mobileMenuOpen ? `${index * 80}ms` : '0ms' }}
+                className={`w-full text-left text-gray-100 hover:text-orange-300 transition-all duration-300 font-semibold text-sm tracking-wide uppercase px-4 py-3 hover:bg-gray-700/50 first:rounded-t-xl last:rounded-b-xl ${mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                style={{ transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms' }}
               >
                 {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
               </button>
