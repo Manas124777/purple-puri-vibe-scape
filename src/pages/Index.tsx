@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
@@ -39,9 +40,7 @@ const Index = () => {
   const aboutDesc = useScrollAnimation(0.3, 200);
   const aboutGrid = useScrollAnimation(0.3, 400);
   const artistsTitle = useScrollAnimation(0.3, 0);
-  const artistsDesc = useScrollAnimation(0.3, 200);
   const galleryTitle = useScrollAnimation(0.3, 0);
-  const galleryDesc = useScrollAnimation(0.3, 200);
   const contactTitle = useScrollAnimation(0.3, 0);
   const contactDesc = useScrollAnimation(0.3, 200);
 
@@ -76,6 +75,38 @@ const Index = () => {
       role: "Community Manager",
       specialty: "House, Waacking",
       bio: "Building bridges between dancers and the Puri community",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      id: 5,
+      name: "Raj Mohanty",
+      role: "Youth Coordinator",
+      specialty: "Freestyle, Street",
+      bio: "Inspiring the next generation of dancers",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      id: 6,
+      name: "Anita Das",
+      role: "Cultural Liaison",
+      specialty: "Traditional Fusion",
+      bio: "Bridging cultural gaps through dance",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b193?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      id: 7,
+      name: "Vikash Sahoo",
+      role: "Event Manager",
+      specialty: "Coordination",
+      bio: "Making events memorable experiences",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      id: 8,
+      name: "Meera Jena",
+      role: "Social Media Manager",
+      specialty: "Content Creation",
+      bio: "Spreading the Scene Sariba story online",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
@@ -116,6 +147,18 @@ const Index = () => {
       title: "Beach Vibes",
       description: "Dancing with the waves at Puri Beach",
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 7,
+      title: "Workshop Session",
+      description: "Learning new moves together",
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 8,
+      title: "Night Performance",
+      description: "Electric atmosphere under the lights",
+      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
   ];
 
@@ -182,20 +225,11 @@ const Index = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div ref={aboutTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${aboutTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-block mb-4">
-              <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Story</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
               <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 ABOUT US
               </span>
             </h2>
-          </div>
-
-          <div ref={aboutDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${aboutDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Pioneering the dance revolution in Puri, where tradition meets innovation
-            </p>
           </div>
 
           <div ref={aboutGrid.ref} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transition-all duration-1000 ${aboutGrid.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -247,10 +281,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div ref={artistsTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${artistsTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-block mb-4">
-              <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Meet Our Team</span>
-            </div>
+          <div ref={artistsTitle.ref} className={`text-center mb-12 transition-all duration-1000 ${artistsTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
               <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 ARTISTS
@@ -258,68 +289,34 @@ const Index = () => {
             </h2>
           </div>
 
-          <div ref={artistsDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${artistsDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              The passionate artists who bring Scene Sariba's vision to life
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {artists.map((artist, index) => {
-              const artistAnimation = useScrollAnimation(0.3, index * 150);
-              const isSelected = selectedArtist === artist.id;
+              const artistAnimation = useScrollAnimation(0.3, index * 100);
               
               return (
                 <div 
                   key={artist.id} 
                   ref={artistAnimation.ref}
-                  className={`relative transition-all duration-700 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${
-                    isSelected ? 'md:col-span-2 lg:col-span-4' : ''
-                  }`}
+                  className={`relative transition-all duration-700 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
-                  {isSelected ? (
-                    <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20">
-                      <button 
-                        onClick={() => setSelectedArtist(null)}
-                        className="mb-6 text-orange-400 hover:text-orange-300 transition-colors"
-                      >
-                        ← Back to all artists
-                      </button>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <div className="order-1 lg:order-1">
-                          <div className="w-full h-80 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl border border-purple-400/20 overflow-hidden">
-                            <img 
-                              src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
-                              alt="Scene Sariba Artist Logo"
-                              className="w-full h-full object-contain p-8"
-                            />
-                          </div>
-                        </div>
-                        <div className="order-2 lg:order-2">
-                          <h3 className="text-4xl font-bold text-white mb-4">{artist.name}</h3>
-                          <p className="text-orange-300 font-semibold mb-3 text-xl">{artist.role}</p>
-                          <p className="text-purple-200 text-lg mb-6 font-medium">{artist.specialty}</p>
-                          <p className="text-gray-200 leading-relaxed text-lg">{artist.bio}</p>
+                  <div className="relative group cursor-pointer transform hover:scale-105 transition-all duration-500">
+                    <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
+                      <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center">
+                        <img 
+                          src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
+                          alt="Scene Sariba Artist Logo"
+                          className="w-20 h-20 object-contain opacity-60"
+                        />
+                      </div>
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <h3 className="text-lg font-bold text-white mb-1">{artist.name}</h3>
+                          <p className="text-orange-300 text-sm font-semibold">{artist.role}</p>
                         </div>
                       </div>
                     </div>
-                  ) : (
-                    <div 
-                      className="relative group cursor-pointer transform hover:scale-105 transition-all duration-500"
-                      onClick={() => setSelectedArtist(artist.id)}
-                    >
-                      <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
-                        <div className="w-full h-72 bg-gradient-to-br from-gray-900 to-gray-700"></div>
-                        
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300">
-                          <div className="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 className="text-2xl font-bold text-white mb-2">{artist.name}</h3>
-                            <p className="text-orange-300 text-base font-semibold">{artist.role}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  </div>
                 </div>
               );
             })}
@@ -336,10 +333,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div ref={galleryTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${galleryTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-block mb-4">
-              <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Moments</span>
-            </div>
+          <div ref={galleryTitle.ref} className={`text-center mb-12 transition-all duration-1000 ${galleryTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
               <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 GALLERY
@@ -347,13 +341,7 @@ const Index = () => {
             </h2>
           </div>
 
-          <div ref={galleryDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${galleryDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Capturing the energy, passion, and cultural fusion of Scene Sariba events
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {galleryImages.map((item, index) => {
               const galleryAnimation = useScrollAnimation(0.3, index * 100);
               return (
@@ -361,31 +349,92 @@ const Index = () => {
                   key={item.id} 
                   ref={galleryAnimation.ref}
                   className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                  onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
                 >
                   <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
-                    <div className="w-full h-72 bg-gradient-to-br from-gray-900 to-gray-700"></div>
+                    <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700"></div>
                     
-                    <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent transition-all duration-300 ${
-                      selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
-                    }`}>
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
-                      </div>
-                    </div>
-
-                    <div className={`absolute inset-0 bg-gray-900/95 backdrop-blur-sm transform transition-transform duration-500 ${
-                      selectedGallery === item.id ? 'translate-y-0' : 'translate-y-full'
-                    }`}>
-                      <div className="p-8 h-full flex flex-col justify-center text-center">
-                        <h3 className="text-2xl font-bold text-white mb-6">{item.title}</h3>
-                        <p className="text-gray-200 leading-relaxed text-lg">{item.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                        <p className="text-gray-300 text-sm">{item.description}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="relative z-10 py-16 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20 mb-8">
+            <h3 className="text-2xl font-bold text-gray-100 mb-6 text-center">Send Us a Message</h3>
+            <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-gray-300 font-medium mb-2">Your Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-300 font-medium mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-gray-300 font-medium mb-2">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
+                  placeholder="+91 XXXXX XXXXX"
+                  required
+                />
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-gray-300 font-medium mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 resize-none transition-all duration-300"
+                  placeholder="Tell us about your interest in Scene Sariba..."
+                  required
+                ></textarea>
+              </div>
+
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-8 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -399,17 +448,11 @@ const Index = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div ref={contactTitle.ref} className={`text-center mb-16 transition-all duration-1000 ${contactTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-block mb-4">
-              <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Get In Touch</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-black mb-6">
               <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
                 CONTACT US
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Ready to join the movement? Let's connect and create something extraordinary together
-            </p>
           </div>
 
           {/* Footer-style Contact Layout */}
@@ -462,74 +505,6 @@ const Index = () => {
                   Join Scene Sariba
                 </button>
               </div>
-            </div>
-
-            {/* Contact Form Section */}
-            <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20 mb-8">
-              <h3 className="text-2xl font-bold text-gray-100 mb-6 text-center">Send Us a Message</h3>
-              <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2">Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
-                      placeholder="Enter your full name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <label className="block text-gray-300 font-medium mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 transition-all duration-300"
-                    placeholder="+91 XXXXX XXXXX"
-                    required
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label className="block text-gray-300 font-medium mb-2">Message</label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-700/70 border border-slate-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 resize-none transition-all duration-300"
-                    placeholder="Tell us about your interest in Scene Sariba..."
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-8 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/40"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
             </div>
 
             {/* Bottom Copyright */}
