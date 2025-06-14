@@ -3,12 +3,13 @@ import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X } from 'lucide-
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogClose } from '../components/ui/dialog';
+import VideoPlayer from '../components/ui/VideoPlayer';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -154,8 +155,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
-      {/* Solid background instead of video */}
-      <div className="absolute top-0 left-0 w-full h-[120vh] bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900"></div>
+      {/* Video Background Section */}
+      <VideoPlayer />
       
       {/* Overlay for better readability */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/70"></div>
