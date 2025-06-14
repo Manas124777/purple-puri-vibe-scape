@@ -291,7 +291,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {artists.map((artist, index) => {
               const artistAnimation = useScrollAnimation(0.3, index * 100);
-              const isFlipped = selectedArtist === artist.id;
+              const isOpen = selectedArtist === artist.id;
               
               return (
                 <div 
@@ -300,33 +300,30 @@ const Index = () => {
                   className={`relative transition-all duration-700 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
                   <div 
-                    className="relative group cursor-pointer h-64 transform hover:scale-105 transition-all duration-500"
-                    onClick={() => setSelectedArtist(isFlipped ? null : artist.id)}
-                    style={{ perspective: '1000px' }}
+                    className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${isOpen ? 'h-80' : 'h-64'}`}
+                    onClick={() => setSelectedArtist(isOpen ? null : artist.id)}
                   >
-                    <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
-                      {/* Front of card */}
-                      <div className="absolute inset-0 backface-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
-                        <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl">
-                          <img 
-                            src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
-                            alt="Scene Sariba Artist Logo"
-                            className="w-20 h-20 object-contain opacity-60"
-                          />
-                        </div>
-                        
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300 rounded-2xl">
-                          <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <h3 className="text-lg font-bold text-white mb-1">{artist.name}</h3>
-                            <p className="text-orange-300 text-sm font-semibold">{artist.role}</p>
-                          </div>
+                    <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${isOpen ? 'transform scale-105 z-30' : ''}`}>
+                      {/* Main image container */}
+                      <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${isOpen ? 'h-1/2' : 'h-full'}`}>
+                        <img 
+                          src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
+                          alt="Scene Sariba Artist Logo"
+                          className="w-20 h-20 object-contain opacity-60"
+                        />
+                      </div>
+                      
+                      {/* Overlay with basic info */}
+                      <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${isOpen ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                        <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${isOpen ? 'transform translate-y-0' : ''}`}>
+                          <h3 className="text-lg font-bold text-white mb-1">{artist.name}</h3>
+                          <p className="text-orange-300 text-sm font-semibold">{artist.role}</p>
                         </div>
                       </div>
 
-                      {/* Back of card */}
-                      <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-2xl bg-gray-700/90 border border-orange-400/30 p-4 flex flex-col justify-center">
-                        <div className="text-center space-y-3">
-                          <h3 className="text-lg font-bold text-white">{artist.name}</h3>
+                      {/* Expanded content box */}
+                      <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${isOpen ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                        <div className="space-y-2">
                           <p className="text-orange-300 text-sm font-semibold">{artist.specialty}</p>
                           <p className="text-gray-200 text-xs leading-relaxed">{artist.bio}</p>
                         </div>
@@ -360,7 +357,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {galleryImages.map((item, index) => {
               const galleryAnimation = useScrollAnimation(0.3, index * 100);
-              const isFlipped = selectedGallery === item.id;
+              const isOpen = selectedGallery === item.id;
               
               return (
                 <div 
@@ -369,26 +366,25 @@ const Index = () => {
                   className={`relative transition-all duration-700 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
                   <div 
-                    className="relative group cursor-pointer h-64 transform hover:scale-105 transition-all duration-500"
-                    onClick={() => setSelectedGallery(isFlipped ? null : item.id)}
-                    style={{ perspective: '1000px' }}
+                    className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${isOpen ? 'h-80' : 'h-64'}`}
+                    onClick={() => setSelectedGallery(isOpen ? null : item.id)}
                   >
-                    <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
-                      {/* Front of card */}
-                      <div className="absolute inset-0 backface-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
-                        <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl"></div>
-                        
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-300 rounded-2xl">
-                          <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                            <p className="text-gray-300 text-sm">{item.description}</p>
-                          </div>
+                    <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${isOpen ? 'transform scale-105 z-30' : ''}`}>
+                      {/* Main image container */}
+                      <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transition-all duration-500 ${isOpen ? 'h-1/2' : 'h-full'}`}>
+                      </div>
+                      
+                      {/* Overlay with basic info */}
+                      <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent transition-all duration-500 rounded-2xl ${isOpen ? 'opacity-80' : 'opacity-60 group-hover:opacity-80'}`}>
+                        <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${isOpen ? 'transform translate-y-0' : ''}`}>
+                          <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                          <p className="text-gray-300 text-sm">{item.description}</p>
                         </div>
                       </div>
 
-                      {/* Back of card */}
-                      <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-2xl bg-gray-700/90 border border-orange-400/30 p-4 flex flex-col justify-center">
-                        <div className="text-center space-y-3">
+                      {/* Expanded content box */}
+                      <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${isOpen ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                        <div className="space-y-2">
                           <h3 className="text-lg font-bold text-white">{item.title}</h3>
                           <p className="text-gray-200 text-sm leading-relaxed">{item.description}</p>
                           <div className="text-orange-300 text-xs">Click to view more details</div>
