@@ -529,7 +529,12 @@ const Index = () => {
 
                 {/* Social Media Icons */}
                 <div className="flex space-x-3 mb-6">
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                  <a 
+                    href="https://www.instagram.com/scene_sariba?igsh=MW12cXBlcDM0dmkycg==" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50"
+                  >
                     <Instagram className="w-5 h-5 text-white" />
                   </a>
                   <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
