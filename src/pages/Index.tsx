@@ -129,17 +129,17 @@ const Index = () => {
 
       {/* Navigation */}
       <nav className="relative z-50 flex items-center justify-between p-4 lg:px-8">
-        <div className="text-2xl lg:text-3xl font-black tracking-tight">
+        <div className="text-xl lg:text-2xl font-black tracking-tight">
           <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
             Scene Sariba
           </span>
         </div>
-        <div className="flex space-x-3 md:space-x-4">
+        <div className="flex space-x-2 md:space-x-3">
           {['home','about','artists','gallery','contact'].map(sec => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
-              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-sm md:text-base tracking-wide uppercase"
+              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-xs md:text-sm tracking-wide uppercase px-2 py-1"
             >
               {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
             </button>
@@ -163,17 +163,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Professional Transition Section */}
-      <div className="relative z-10 h-8 bg-gradient-to-b from-transparent via-purple-900/60 to-gray-700/80">
+      {/* Smooth Professional Transition Section */}
+      <div className="relative z-10 h-16 bg-gradient-to-b from-transparent via-gray-800/30 to-gray-800/60">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-2 right-20 w-16 h-16 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
-          <div className="absolute bottom-2 right-20 w-10 h-10 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-purple-400/20 to-orange-400/20 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-2 right-20 w-16 h-16 bg-gradient-to-r from-purple-500/5 to-orange-500/5 rounded-full animate-pulse transform rotate-12"></div>
+          <div className="absolute bottom-2 right-20 w-10 h-10 bg-gradient-to-r from-orange-500/8 to-purple-500/8 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-purple-400/10 to-orange-400/10 rounded-full animate-pulse transform rotate-180" style={{ animationDelay: '2.5s' }}></div>
         </div>
       </div>
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-700/70 backdrop-blur-md">
+      <section id="about" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-12 left-10 w-24 h-24 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
           <div className="absolute bottom-12 right-10 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform -rotate-12" style={{ animationDelay: '2s' }}></div>
@@ -199,7 +199,7 @@ const Index = () => {
           </div>
 
           <div ref={aboutGrid.ref} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transition-all duration-1000 ${aboutGrid.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30">
+            <div className="bg-gray-700/60 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/20">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-100 mb-2">The Addyction</h3>
                 <p className="text-orange-300 font-semibold text-lg">Adarsh Mishra - Founder</p>
@@ -217,7 +217,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30">
+            <div className="bg-gray-700/60 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/20">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-100 mb-2">Scene Sariba Jam</h3>
                 <p className="text-orange-300 font-semibold text-lg">Our Flagship Event</p>
@@ -239,7 +239,7 @@ const Index = () => {
       </section>
 
       {/* Artists Section */}
-      <section id="artists" className="relative z-10 py-8 px-8 lg:px-16 bg-gradient-to-br from-gray-800/80 via-purple-900/60 to-gray-700/70 backdrop-blur-md">
+      <section id="artists" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-8 right-16 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-12"></div>
           <div className="absolute bottom-16 right-16 w-20 h-20 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-45" style={{ animationDelay: '1s' }}></div>
@@ -264,65 +264,71 @@ const Index = () => {
             </p>
           </div>
 
-          {selectedArtist ? (
-            <div className="bg-slate-800/90 border border-purple-400/40 rounded-2xl p-8 mb-8">
-              <button 
-                onClick={() => setSelectedArtist(null)}
-                className="mb-6 text-orange-400 hover:text-orange-300 transition-colors"
-              >
-                ← Back to all artists
-              </button>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-4xl font-bold text-white mb-4">
-                    {artists.find(a => a.id === selectedArtist)?.name}
-                  </h3>
-                  <p className="text-orange-300 font-semibold mb-3 text-xl">
-                    {artists.find(a => a.id === selectedArtist)?.role}
-                  </p>
-                  <p className="text-purple-200 text-lg mb-6 font-medium">
-                    {artists.find(a => a.id === selectedArtist)?.specialty}
-                  </p>
-                  <p className="text-gray-200 leading-relaxed text-lg">
-                    {artists.find(a => a.id === selectedArtist)?.bio}
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <div className="w-80 h-80 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl"></div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {artists.map((artist, index) => {
-                const artistAnimation = useScrollAnimation(0.3, index * 150);
-                return (
-                  <div 
-                    key={artist.id} 
-                    ref={artistAnimation.ref}
-                    className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                    onClick={() => setSelectedArtist(artist.id)}
-                  >
-                    <div className="relative overflow-hidden rounded-2xl bg-slate-800/90 border border-purple-400/40 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
-                      <div className="w-full h-72 bg-gradient-to-br from-slate-900 to-slate-800"></div>
-                      
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-6">
-                          <h3 className="text-2xl font-bold text-white mb-2">{artist.name}</h3>
-                          <p className="text-orange-300 text-base font-semibold">{artist.role}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {artists.map((artist, index) => {
+              const artistAnimation = useScrollAnimation(0.3, index * 150);
+              const isSelected = selectedArtist === artist.id;
+              
+              return (
+                <div 
+                  key={artist.id} 
+                  ref={artistAnimation.ref}
+                  className={`relative transition-all duration-700 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${
+                    isSelected ? 'md:col-span-2 lg:col-span-4' : ''
+                  }`}
+                >
+                  {isSelected ? (
+                    <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20">
+                      <button 
+                        onClick={() => setSelectedArtist(null)}
+                        className="mb-6 text-orange-400 hover:text-orange-300 transition-colors"
+                      >
+                        ← Back to all artists
+                      </button>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div className="order-1 lg:order-1">
+                          <div className="w-full h-80 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl border border-purple-400/20 overflow-hidden">
+                            <img 
+                              src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
+                              alt="Scene Sariba Artist Logo"
+                              className="w-full h-full object-contain p-8"
+                            />
+                          </div>
+                        </div>
+                        <div className="order-2 lg:order-2">
+                          <h3 className="text-4xl font-bold text-white mb-4">{artist.name}</h3>
+                          <p className="text-orange-300 font-semibold mb-3 text-xl">{artist.role}</p>
+                          <p className="text-purple-200 text-lg mb-6 font-medium">{artist.specialty}</p>
+                          <p className="text-gray-200 leading-relaxed text-lg">{artist.bio}</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+                  ) : (
+                    <div 
+                      className="relative group cursor-pointer transform hover:scale-105 transition-all duration-500"
+                      onClick={() => setSelectedArtist(artist.id)}
+                    >
+                      <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
+                        <div className="w-full h-72 bg-gradient-to-br from-gray-900 to-gray-700"></div>
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300">
+                          <div className="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 className="text-2xl font-bold text-white mb-2">{artist.name}</h3>
+                            <p className="text-orange-300 text-base font-semibold">{artist.role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-8 px-8 lg:px-16 bg-gradient-to-bl from-purple-900/70 via-gray-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="gallery" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-12 left-10 w-28 h-28 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
           <div className="absolute bottom-12 right-16 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
@@ -357,10 +363,10 @@ const Index = () => {
                   className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                   onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-slate-800/90 border border-purple-400/40 hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-500">
-                    <div className="w-full h-72 bg-gradient-to-br from-slate-900 to-slate-800"></div>
+                  <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                    <div className="w-full h-72 bg-gradient-to-br from-gray-900 to-gray-700"></div>
                     
-                    <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
+                    <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent transition-all duration-300 ${
                       selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
                     }`}>
                       <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -368,7 +374,7 @@ const Index = () => {
                       </div>
                     </div>
 
-                    <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-500 ${
+                    <div className={`absolute inset-0 bg-gray-900/95 backdrop-blur-sm transform transition-transform duration-500 ${
                       selectedGallery === item.id ? 'translate-y-0' : 'translate-y-full'
                     }`}>
                       <div className="p-8 h-full flex flex-col justify-center text-center">
@@ -385,7 +391,7 @@ const Index = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="relative z-10 py-8 px-8 lg:px-16 bg-gradient-to-tr from-gray-900/80 via-purple-800/60 to-gray-700/70 backdrop-blur-md">
+      <section id="contact" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-16 right-12 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full animate-pulse transform rotate-30"></div>
           <div className="absolute bottom-12 left-16 w-22 h-22 bg-gradient-to-r from-orange-500/15 to-purple-500/15 rounded-full animate-bounce transform -rotate-30" style={{ animationDelay: '2s' }}></div>
@@ -412,7 +418,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/40">
+              <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-8 border border-purple-400/20">
                 <h3 className="text-2xl font-bold text-gray-100 mb-6">Send Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -479,7 +485,7 @@ const Index = () => {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-gray-700/80 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/40">
+              <div className="bg-gray-700/60 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/20">
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">Join The Movement</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">Ready to be part of Puri's most vibrant dance community?</p>
                 
