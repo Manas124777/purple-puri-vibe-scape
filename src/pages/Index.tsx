@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
@@ -292,6 +291,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {artists.map((artist, index) => {
               const artistAnimation = useScrollAnimation(0.3, index * 100);
+              const isFlipped = selectedArtist === artist.id;
               
               return (
                 <div 
@@ -299,20 +299,36 @@ const Index = () => {
                   ref={artistAnimation.ref}
                   className={`relative transition-all duration-700 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
-                  <div className="relative group cursor-pointer transform hover:scale-105 transition-all duration-500">
-                    <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
-                      <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center">
-                        <img 
-                          src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
-                          alt="Scene Sariba Artist Logo"
-                          className="w-20 h-20 object-contain opacity-60"
-                        />
+                  <div 
+                    className="relative group cursor-pointer h-64 transform hover:scale-105 transition-all duration-500"
+                    onClick={() => setSelectedArtist(isFlipped ? null : artist.id)}
+                    style={{ perspective: '1000px' }}
+                  >
+                    <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+                      {/* Front of card */}
+                      <div className="absolute inset-0 backface-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
+                        <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl">
+                          <img 
+                            src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
+                            alt="Scene Sariba Artist Logo"
+                            className="w-20 h-20 object-contain opacity-60"
+                          />
+                        </div>
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300 rounded-2xl">
+                          <div className="absolute bottom-0 left-0 right-0 p-4">
+                            <h3 className="text-lg font-bold text-white mb-1">{artist.name}</h3>
+                            <p className="text-orange-300 text-sm font-semibold">{artist.role}</p>
+                          </div>
+                        </div>
                       </div>
-                      
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                          <h3 className="text-lg font-bold text-white mb-1">{artist.name}</h3>
-                          <p className="text-orange-300 text-sm font-semibold">{artist.role}</p>
+
+                      {/* Back of card */}
+                      <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-2xl bg-gray-700/90 border border-orange-400/30 p-4 flex flex-col justify-center">
+                        <div className="text-center space-y-3">
+                          <h3 className="text-lg font-bold text-white">{artist.name}</h3>
+                          <p className="text-orange-300 text-sm font-semibold">{artist.specialty}</p>
+                          <p className="text-gray-200 text-xs leading-relaxed">{artist.bio}</p>
                         </div>
                       </div>
                     </div>
@@ -344,19 +360,39 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {galleryImages.map((item, index) => {
               const galleryAnimation = useScrollAnimation(0.3, index * 100);
+              const isFlipped = selectedGallery === item.id;
+              
               return (
                 <div 
                   key={item.id} 
                   ref={galleryAnimation.ref}
-                  className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  className={`relative transition-all duration-700 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
-                    <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700"></div>
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                        <p className="text-gray-300 text-sm">{item.description}</p>
+                  <div 
+                    className="relative group cursor-pointer h-64 transform hover:scale-105 transition-all duration-500"
+                    onClick={() => setSelectedGallery(isFlipped ? null : item.id)}
+                    style={{ perspective: '1000px' }}
+                  >
+                    <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+                      {/* Front of card */}
+                      <div className="absolute inset-0 backface-hidden rounded-2xl bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                        <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl"></div>
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-300 rounded-2xl">
+                          <div className="absolute bottom-0 left-0 right-0 p-4">
+                            <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                            <p className="text-gray-300 text-sm">{item.description}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Back of card */}
+                      <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-2xl bg-gray-700/90 border border-orange-400/30 p-4 flex flex-col justify-center">
+                        <div className="text-center space-y-3">
+                          <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                          <p className="text-gray-200 text-sm leading-relaxed">{item.description}</p>
+                          <div className="text-orange-300 text-xs">Click to view more details</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -455,7 +491,6 @@ const Index = () => {
             </h2>
           </div>
 
-          {/* Footer-style Contact Layout */}
           <div ref={contactDesc.ref} className={`transition-all duration-1000 ${contactDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               
@@ -523,6 +558,18 @@ const Index = () => {
       <div className="absolute bottom-1/3 right-1/4 w-12 h-12 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full opacity-25 animate-bounce" style={{ animationDelay: '1s' }}></div>
       <div className="absolute top-1/4 left-1/3 w-6 h-6 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
       <div className="absolute bottom-1/4 left-1/5 w-10 h-10 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '3s' }}></div>
+
+      <style jsx>{`
+        .transform-style-preserve-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </div>
   );
 };
