@@ -1,7 +1,5 @@
-
-
 import { useState } from 'react';
-import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
+import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X } from 'lucide-react';
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -22,6 +20,7 @@ const Index = () => {
 
   const [selectedArtist, setSelectedArtist] = useState<number | null>(null);
   const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -33,6 +32,11 @@ const Index = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    setMobileMenuOpen(false);
   };
 
   // Scroll animation hooks
@@ -179,30 +183,57 @@ const Index = () => {
             Scene Sariba
           </span>
         </div>
-        <div className="flex space-x-2 md:space-x-3">
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-3">
           {['home','about','artists','gallery','contact'].map(sec => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
-              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-xs md:text-sm tracking-wide uppercase px-2 py-1"
+              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-sm tracking-wide uppercase px-3 py-2 rounded-lg hover:bg-gray-800/30"
             >
               {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
             </button>
           ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden text-gray-100 hover:text-orange-300 transition-colors p-2"
+        >
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-lg border-t border-gray-700/50 md:hidden">
+            <div className="flex flex-col py-4">
+              {['home','about','artists','gallery','contact'].map(sec => (
+                <button
+                  key={sec}
+                  onClick={() => handleNavClick(sec)}
+                  className="text-gray-100 hover:text-orange-300 transition-all duration-300 font-semibold text-sm tracking-wide uppercase px-6 py-3 text-left hover:bg-gray-800/30"
+                >
+                  {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative z-20 flex items-center justify-center min-h-screen text-center px-8">
+      <section id="home" className="relative z-20 flex items-center justify-center min-h-screen text-center px-4 sm:px-8">
         <div className="max-w-5xl relative z-30">
           <div className="mb-8">
             <img
               src="/lovable-uploads/744ee8a6-9231-478c-96ee-9e02ce62a74f.png"
               alt="Scene Sariba Logo"
-              className="mx-auto w-80 h-auto relative z-40 drop-shadow-2xl"
+              className="mx-auto w-64 sm:w-80 h-auto relative z-40 drop-shadow-2xl"
             />
           </div>
-          <p className="text-2xl lg:text-3xl text-gray-100 mt-4 mb-8 font-light tracking-wide drop-shadow-lg relative z-40 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-2xl lg:text-3xl text-gray-100 mt-4 mb-8 font-light tracking-wide drop-shadow-lg relative z-40 max-w-3xl mx-auto leading-relaxed">
             Where Culture Meets Rhythm in Puri
           </p>
         </div>
@@ -556,7 +587,7 @@ const Index = () => {
       <div className="absolute top-1/3 right-10 w-8 h-8 bg-gradient-to-r from-purple-600 to-gray-600 rounded-full opacity-30 animate-pulse"></div>
       <div className="absolute bottom-1/3 right-1/4 w-12 h-12 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full opacity-25 animate-bounce" style={{ animationDelay: '1s' }}></div>
       <div className="absolute top-1/4 left-1/3 w-6 h-6 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full opacity-40 animate-pulse" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-10 h-10 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '3s' }}></div>
+      <div className="absolute bottom-1/4 left-1/5 w-10 h-10 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-25 animate-bounce" style={{ animationDelay: '3s' }}></div>
 
       <style>
         {`
@@ -576,4 +607,3 @@ const Index = () => {
 };
 
 export default Index;
-
