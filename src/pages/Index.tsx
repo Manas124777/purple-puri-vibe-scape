@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
 import React from 'react';
 import VideoPlayer from '../components/ui/VideoPlayer';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
@@ -32,6 +33,17 @@ const Index = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
   };
+
+  // Scroll animation hooks
+  const aboutTitle = useScrollAnimation(0.3, 0);
+  const aboutDesc = useScrollAnimation(0.3, 200);
+  const aboutGrid = useScrollAnimation(0.3, 400);
+  const artistsTitle = useScrollAnimation(0.3, 0);
+  const artistsDesc = useScrollAnimation(0.3, 200);
+  const galleryTitle = useScrollAnimation(0.3, 0);
+  const galleryDesc = useScrollAnimation(0.3, 200);
+  const contactTitle = useScrollAnimation(0.3, 0);
+  const contactDesc = useScrollAnimation(0.3, 200);
 
   const artists = [
     {
@@ -169,7 +181,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-8">
+          <div ref={aboutTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${aboutTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Story</span>
             </div>
@@ -178,12 +190,15 @@ const Index = () => {
                 ABOUT US
               </span>
             </h2>
+          </div>
+
+          <div ref={aboutDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${aboutDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Pioneering the dance revolution in Puri, where tradition meets innovation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div ref={aboutGrid.ref} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transition-all duration-1000 ${aboutGrid.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="bg-gray-700/80 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-100 mb-2">The Addyction</h3>
@@ -232,7 +247,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-8">
+          <div ref={artistsTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${artistsTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Meet Our Team</span>
             </div>
@@ -241,45 +256,68 @@ const Index = () => {
                 ARTISTS
               </span>
             </h2>
+          </div>
+
+          <div ref={artistsDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${artistsDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               The passionate artists who bring Scene Sariba's vision to life
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {artists.map((artist, index) => (
-              <div 
-                key={artist.id} 
-                className="relative group cursor-pointer transform hover:scale-110 transition-all duration-500"
-                onClick={() => setSelectedArtist(selectedArtist === artist.id ? null : artist.id)}
-                style={{ animationDelay: `${index * 0.2}s` }}
+          {selectedArtist ? (
+            <div className="bg-slate-800/90 border border-purple-400/40 rounded-2xl p-8 mb-8">
+              <button 
+                onClick={() => setSelectedArtist(null)}
+                className="mb-6 text-orange-400 hover:text-orange-300 transition-colors"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-slate-800/90 border border-purple-400/40 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
-                  <div className="w-full h-72 bg-gradient-to-br from-slate-900 to-slate-800"></div>
-                  
-                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent transition-all duration-300 ${
-                    selectedArtist === artist.id ? 'opacity-95' : 'opacity-70 group-hover:opacity-85'
-                  }`}>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">{artist.name}</h3>
-                      <p className="text-orange-300 text-base font-semibold">{artist.role}</p>
-                    </div>
-                  </div>
-
-                  <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-500 ${
-                    selectedArtist === artist.id ? 'translate-y-0' : 'translate-y-full'
-                  }`}>
-                    <div className="p-8 h-full flex flex-col justify-center">
-                      <h3 className="text-3xl font-bold text-white mb-4">{artist.name}</h3>
-                      <p className="text-orange-300 font-semibold mb-3 text-lg">{artist.role}</p>
-                      <p className="text-purple-200 text-base mb-6 font-medium">{artist.specialty}</p>
-                      <p className="text-gray-200 leading-relaxed">{artist.bio}</p>
-                    </div>
-                  </div>
+                ← Back to all artists
+              </button>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-4xl font-bold text-white mb-4">
+                    {artists.find(a => a.id === selectedArtist)?.name}
+                  </h3>
+                  <p className="text-orange-300 font-semibold mb-3 text-xl">
+                    {artists.find(a => a.id === selectedArtist)?.role}
+                  </p>
+                  <p className="text-purple-200 text-lg mb-6 font-medium">
+                    {artists.find(a => a.id === selectedArtist)?.specialty}
+                  </p>
+                  <p className="text-gray-200 leading-relaxed text-lg">
+                    {artists.find(a => a.id === selectedArtist)?.bio}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-80 h-80 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl"></div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {artists.map((artist, index) => {
+                const artistAnimation = useScrollAnimation(0.3, index * 150);
+                return (
+                  <div 
+                    key={artist.id} 
+                    ref={artistAnimation.ref}
+                    className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                    onClick={() => setSelectedArtist(artist.id)}
+                  >
+                    <div className="relative overflow-hidden rounded-2xl bg-slate-800/90 border border-purple-400/40 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
+                      <div className="w-full h-72 bg-gradient-to-br from-slate-900 to-slate-800"></div>
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent opacity-70 group-hover:opacity-85 transition-all duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h3 className="text-2xl font-bold text-white mb-2">{artist.name}</h3>
+                          <p className="text-orange-300 text-base font-semibold">{artist.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -292,7 +330,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-8">
+          <div ref={galleryTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${galleryTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Our Moments</span>
             </div>
@@ -301,41 +339,47 @@ const Index = () => {
                 GALLERY
               </span>
             </h2>
+          </div>
+
+          <div ref={galleryDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${galleryDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Capturing the energy, passion, and cultural fusion of Scene Sariba events
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {galleryImages.map((item, index) => (
-              <div 
-                key={item.id} 
-                className="relative group cursor-pointer transform hover:scale-110 transition-all duration-500"
-                onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="relative overflow-hidden rounded-2xl bg-slate-800/90 border border-purple-400/40 hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-500">
-                  <div className="w-full h-72 bg-gradient-to-br from-slate-900 to-slate-800"></div>
-                  
-                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
-                    selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
-                  }`}>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+            {galleryImages.map((item, index) => {
+              const galleryAnimation = useScrollAnimation(0.3, index * 100);
+              return (
+                <div 
+                  key={item.id} 
+                  ref={galleryAnimation.ref}
+                  className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  onClick={() => setSelectedGallery(selectedGallery === item.id ? null : item.id)}
+                >
+                  <div className="relative overflow-hidden rounded-2xl bg-slate-800/90 border border-purple-400/40 hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-500">
+                    <div className="w-full h-72 bg-gradient-to-br from-slate-900 to-slate-800"></div>
+                    
+                    <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent transition-all duration-300 ${
+                      selectedGallery === item.id ? 'opacity-95' : 'opacity-60 group-hover:opacity-80'
+                    }`}>
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-500 ${
-                    selectedGallery === item.id ? 'translate-y-0' : 'translate-y-full'
-                  }`}>
-                    <div className="p-8 h-full flex flex-col justify-center text-center">
-                      <h3 className="text-2xl font-bold text-white mb-6">{item.title}</h3>
-                      <p className="text-gray-200 leading-relaxed text-lg">{item.description}</p>
+                    <div className={`absolute inset-0 bg-slate-900/95 backdrop-blur-sm transform transition-transform duration-500 ${
+                      selectedGallery === item.id ? 'translate-y-0' : 'translate-y-full'
+                    }`}>
+                      <div className="p-8 h-full flex flex-col justify-center text-center">
+                        <h3 className="text-2xl font-bold text-white mb-6">{item.title}</h3>
+                        <p className="text-gray-200 leading-relaxed text-lg">{item.description}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -349,7 +393,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-8">
+          <div ref={contactTitle.ref} className={`text-center mb-8 transition-all duration-1000 ${contactTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block mb-4">
               <span className="text-orange-400 font-semibold text-lg tracking-widest uppercase">Get In Touch</span>
             </div>
@@ -358,6 +402,9 @@ const Index = () => {
                 CONTACT US
               </span>
             </h2>
+          </div>
+
+          <div ref={contactDesc.ref} className={`text-center mb-8 transition-all duration-1000 ${contactDesc.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Ready to join the movement? Let's connect and create something extraordinary together
             </p>
