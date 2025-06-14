@@ -5,7 +5,7 @@ const VideoPlayer = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-[120vh]">
       <video
-        src="/background-video.mp4"
+        src="/your-video-name.mp4"
         className="w-full h-full object-cover"
         autoPlay
         muted
