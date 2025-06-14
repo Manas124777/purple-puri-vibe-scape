@@ -116,18 +116,18 @@ const Index = () => {
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/70"></div>
 
       {/* Navigation */}
-      <nav className="relative z-50 flex items-center justify-between p-8 lg:px-16">
-        <div className="text-3xl lg:text-4xl font-black tracking-tight">
+      <nav className="relative z-50 flex items-center justify-between p-4 lg:px-8">
+        <div className="text-2xl lg:text-3xl font-black tracking-tight">
           <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
             Scene Sariba
           </span>
         </div>
-        <div className="flex space-x-6 md:space-x-10">
+        <div className="flex space-x-3 md:space-x-4">
           {['home','about','artists','gallery','contact'].map(sec => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
-              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-base md:text-lg tracking-wide uppercase letterspacing-wider"
+              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-sm md:text-base tracking-wide uppercase"
             >
               {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
             </button>
@@ -148,14 +148,6 @@ const Index = () => {
           <p className="text-2xl lg:text-3xl text-gray-100 mt-4 mb-8 font-light tracking-wide drop-shadow-lg relative z-40 max-w-3xl mx-auto leading-relaxed">
             Where Culture Meets Rhythm in Puri
           </p>
-          <div className="relative z-40 mt-12">
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 tracking-wide"
-            >
-              Discover Our Story
-            </button>
-          </div>
         </div>
       </section>
 
