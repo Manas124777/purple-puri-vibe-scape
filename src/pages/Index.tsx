@@ -537,7 +537,12 @@ const Index = () => {
                   >
                     <Instagram className="w-5 h-5 text-white" />
                   </a>
-                  <a href="#" className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50">
+                  <a 
+                    href="https://m.youtube.com/watch?v=1FRffuAUjUc&fbclid=PAQ0xDSwK6hKVleHRuA2FlbQIxMAABp5D3U4lnn7-coqsBZvfNP1BbroDDH__uDCD8XyZvVhrUTWClFwPA4cIf_dc2_aem_z8NGrW2IDuVvMJypULe-NQ" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/50"
+                  >
                     <Youtube className="w-5 h-5 text-white" />
                   </a>
                 </div>
