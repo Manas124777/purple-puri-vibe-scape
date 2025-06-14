@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Instagram, Youtube, Music, Mail, Phone } from 'lucide-react';
+import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X } from 'lucide-react';
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -20,6 +20,7 @@ const Index = () => {
 
   const [selectedArtist, setSelectedArtist] = useState<number | null>(null);
   const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -31,6 +32,11 @@ const Index = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    setMobileMenuOpen(false);
   };
 
   // Scroll animation hooks
@@ -178,17 +184,44 @@ const Index = () => {
           </span>
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex space-x-2 md:space-x-3">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-3">
           {['home','about','artists','gallery','contact'].map(sec => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
-              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-xs md:text-sm tracking-wide uppercase px-2 md:px-3 py-2 rounded-lg hover:bg-gray-800/30"
+              className="text-gray-100 hover:text-orange-300 transition-all duration-500 font-semibold hover:scale-110 text-sm tracking-wide uppercase px-3 py-2 rounded-lg hover:bg-gray-800/30"
             >
               {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
             </button>
           ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden text-gray-100 hover:text-orange-300 transition-all duration-300 p-2 hover:scale-110 hover:bg-gray-800/30 rounded-lg"
+        >
+          <div className="relative w-6 h-6">
+            <Menu className={`w-6 h-6 absolute transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`} />
+            <X className={`w-6 h-6 absolute transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-180'}`} />
+          </div>
+        </button>
+
+        {/* Mobile Menu Dropdown */}
+        <div className={`absolute top-full right-4 mt-2 bg-gray-800/95 backdrop-blur-lg border border-gray-600/50 rounded-xl shadow-2xl md:hidden transition-all duration-500 origin-top-right ${mobileMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
+          <div className="py-2">
+            {['home','about','artists','gallery','contact'].map((sec, index) => (
+              <button
+                key={sec}
+                onClick={() => handleNavClick(sec)}
+                className={`w-full text-left text-gray-100 hover:text-orange-300 transition-all duration-300 font-semibold text-sm tracking-wide uppercase px-4 py-3 hover:bg-gray-700/50 first:rounded-t-xl last:rounded-b-xl ${mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                style={{ transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms' }}
+              >
+                {sec.charAt(0).toUpperCase() + sec.slice(1).replace('-', ' ')}
+              </button>
+            ))}
+          </div>
         </div>
       </nav>
 
