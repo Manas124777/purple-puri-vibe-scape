@@ -7,9 +7,9 @@ import VideoPlayer from '@/components/ui/VideoPlayer';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -155,11 +155,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
-      {/* Video Background Section */}
+      <div className="relative w-full h-full"></div>
       <VideoPlayer />
-      
+      {/* Background Video */}
+
       {/* Overlay for better readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/70"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-white/10 backdrop-blur-lg z-10 transition duration-700"></div>
 
       {/* Navigation */}
       <nav className="relative z-50 flex items-center justify-between p-4 lg:px-8">
@@ -256,11 +257,11 @@ const Index = () => {
             <div className="bg-gray-700/60 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/20">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-100 mb-2">The Addyction</h3>
-                <p className="text-orange-300 font-semibold text-lg">Adarsh Mishra - Founder</p>
+                <p className="text-orange-300 font-semibold text-lg">Adarsh Mishra - Founder | Dancer | Rap Artist</p>
               </div>
               <div className="space-y-4 text-gray-200 leading-relaxed">
                 <p>
-                  Adarsh Mishra, known as "The Addyction," is the visionary founder of Scene Sariba. With over 8 years of professional experience, he has revolutionized street dance culture in Puri, Odisha.
+                  Adarsh Mishra, widely known as The Addyction, is a dynamic force in India’s street culture scene. A underground Hip-Hop dancer and Odia rap , he fuses local Odia spirit with global hip-hop energy.
                 </p>
                 <p>
                   His innovative approach blends traditional Odia cultural elements with contemporary dance forms, creating a unique movement that resonates with artists across Eastern India.
