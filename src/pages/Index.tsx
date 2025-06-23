@@ -155,12 +155,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
-      <div className="relative w-full h-full"></div>
       <VideoPlayer />
       {/* Background Video */}
 
       {/* Overlay for better readability */}
-      <div className="absolute top-0 left-0 w-full h-full bg-white/10 backdrop-blur-lg z-10 transition duration-700"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-transparent z-10 transition duration-700"></div>
 
       {/* Navigation */}
       <nav className="relative z-50 flex items-center justify-between p-4 lg:px-8">
@@ -222,7 +221,7 @@ const Index = () => {
             />
           </div>
           <p className="text-lg sm:text-2xl lg:text-3xl text-gray-100 mt-4 mb-8 font-light tracking-wide drop-shadow-lg relative z-40 max-w-3xl mx-auto leading-relaxed">
-            Where Culture Meets Rhythm in Puri
+            Where Culture Meets Rhythm in East India
           </p>
         </div>
       </section>
