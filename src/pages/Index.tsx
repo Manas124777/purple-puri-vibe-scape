@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X } from 'lucide-react';
+import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X, RollerCoaster } from 'lucide-react';
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogClose } from '../components/ui/dialog';
@@ -54,67 +54,88 @@ const Index = () => {
   const artists = [
     {
       id: 1,
-      name: "Adarsh Mishra",
-      role: "Founder & Head Choreographer",
-      specialty: "Hip-Hop, Krumping",
-      bio: "Pioneer of Puri's street dance scene with 8+ years of experience",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Maika Rush",
+      specialty: "Hip-Hop",
+      bio: "MAiKA is a Japanese hip-hop dancer and choreographer from Osaka, co-founder of the crew RushBall. She’s earned top titles at DANCE@LIVE Kids, Juste Debout, WDC, and DanceAlive All-Styles. Known for her groovy yet powerful style, she creates choreography for music videos, theme-park shows, and trains youth teams. In 2025, she signed with streetwear brands G-shock, X-girl and XLARGE to inspire the next generation of Japanese female hip-hop dancers",
+      image: "/maika.png"
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      role: "Creative Director",
-      specialty: "Contemporary, Odissi Fusion",
-      bio: "Blending traditional Odissi with modern expressions",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b193?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Nextion",
+      specialty: "Hip-Hop",
+      bio: "Nextion is a dynamic hip-hop artist from Bhubaneswar, known for his fierce battles and powerful stage presence. He won the Red Bull Dance Your Style India 2025 finals in Delhi, earning a spot at the World Final in Los Angeles. A two-time national finalist (2022, 2025) and runner-up on India’s Best Dancer Season 4, his mix of raw energy and emotional storytelling makes him a standout in the street dance scene.",
+      image: "nextion.jpg"
     },
     {
       id: 3,
-      name: "Rahul Patra",
-      role: "Battle Coordinator",
-      specialty: "Breaking, Popping",
-      bio: "National level B-boy representing Odisha across India",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Varun Dagar",
+      specialty: "Street-Busking & balletic dance",
+      bio: "Varun Dagar, a street dancer, singer, and choreographer from Palwal now based in Delhi, rose to fame with his soulful, balletic performances at Connaught Place. He won World of Dance Chennai in 2021 and gained national attention on India’s Best Dancer Season 2. Known for his expressive style and heartfelt artistry, Varun continues to inspire India’s street-dance scene.",
+      image: "varun.jpg"
     },
     {
       id: 4,
-      name: "Sneha Mishra",
-      role: "Community Manager",
-      specialty: "House, Waacking",
-      bio: "Building bridges between dancers and the Puri community",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Faria Abdullah",
+      specialty: "Actress",
+      bio: "Faria Abdullah is an actress, dancer, and visual performer from Hyderabad, trained in Kathak, hip-hop, waacking, house, and belly dance. Starting with over 50 theatre plays, she rose to fame as “Chitti” in *Jathi Ratnalu* (2021). In 2025, she judged *Dance IKON 2: WildFire*, applauding diverse talent. Also a painter, poet, and activist, Faria channels her passion through many forms of expression.",
+      image: "faria.jpg"
     },
     {
       id: 5,
-      name: "Raj Mohanty",
-      role: "Youth Coordinator",
-      specialty: "Freestyle, Street",
-      bio: "Inspiring the next generation of dancers",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Nepo",
+      specialty: "Hip-Hop",
+      bio: "Deepak Shahi, aka Nepo, is a hip-hop dancer and choreographer from Haldwani, Uttarakhand. A two-time Red Bull Dance Your Style India champion (2021, 2023), he represented India at the World Finals in Germany. In 2024, he impressed on India’s Best Dancer Season 4 with choreographer Vartika Jha. Known for his dynamic style and infectious presence, Nepo is a leading force in India’s street-dance scene.",
+      image: "nepo.jpg"
     },
     {
       id: 6,
-      name: "Anita Das",
-      role: "Cultural Liaison",
-      specialty: "Traditional Fusion",
-      bio: "Bridging cultural gaps through dance",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b193?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Alik",
+      specialty: "Hip-hop",
+      bio: "Alik Kim, known as Alik, is a hip-hop dancer from Almaty, Kazakhstan. A member of Zone 51 and instructor at Skillz Dance Studio, he’s known for his locking and freestyle flow. Gaining attention through viral videos and battle wins, Alik is steadily rising in Kazakhstan’s street-dance scene, with goals to grow through workshops, competitions, and digital content.",
+      image: "alik.jpg"
     },
     {
       id: 7,
-      name: "Vikash Sahoo",
-      role: "Event Manager",
-      specialty: "Coordination",
-      bio: "Making events memorable experiences",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Kama",
+      specialty: "Hip-Hop",
+      bio: "Kama (Kamila) is a leading hip-hop artist from Almaty, Kazakhstan, active as a choreographer and performer. She leads Flow Keeperz, offering workshops in groove, hip-hop and freestyle. Featured as a “Hip Hop Pro” at Almaty Dance Fest 2024 and headliner of Kazakhstan’s first Hip-Hop Base Camp in 2025. As both educator and artist, Kama continues to invigorate and inspire Central Asia’s growing street-dance community.",
+      image: "kama.jpg"
     },
     {
       id: 8,
-      name: "Meera Jena",
-      role: "Social Media Manager",
-      specialty: "Content Creation",
-      bio: "Spreading the Scene Sariba story online",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Peot",
+      specialty: "Hip-Hop, DJ",
+      bio: "Amirul Hafiz, known as Peot, is a Malaysian hip-hop dancer and DJ. A seasoned competitor, he won the Judgment Day World Dance Games qualifier in 2019 and represented Malaysia in China. Featured on the podcast *Shoes Off, No Cap*, he speaks on hip-hop fundamentals, crew life (Walawei, BeatMyBois), and battle mindset. Through workshops, performances, and music, Peot stands as a key figure in Malaysia’s street dance culture.",
+      image: "peot.jpg"
+    },
+    {
+      id: 9,
+      name: "Paal Dabba",
+      specialty: "Hip-Hop, Rapper",
+      bio: "Paal Dabba, born Anish in 2000 in Chennai, is a dancer-turned-rapper, singer, songwriter, and choreographer. Rising with Bfab crew and winning Breezer Vivid Shuffle in 2019, he debuted in music with “3SHA” and “Ai,” followed by hits like “Chikkama,” “170CM,” “SAB,” and “Galatta.” In 2025, he stepped into acting with Vijay Milton’s bilingual film. Named in Rolling Stone India’s “Future Top 25 Artists 2024”",
+      image: "paal.jpg"
+    },
+    {
+      id: 10,
+      name: "Boogie LLB",
+      specialty: "Popping",
+      bio: "Boogie LLB (Anish Mitra) is a Kolkata-based popper known for his raw, street-driven style and underground roots. Rising from battles in barges and basements, he gained national attention on India’s Best Dancer Season 3 with heartfelt performances—like a thumri piece with Saumya Kamble that moved judge Sonali Bendre to dance. Blending underground grit with emotional depth, Boogie stands out as a powerful force in India’s urban dance scene.",
+      image: "boogie.jpg"
+    },
+    {
+      id: 11,
+      name: "B-Boy Tornado",
+      role: "Content Creator",
+      specialty: "B-Boying",
+      bio: "B-Boy Tornado (Ramesh Anandabhushan Yadav) is a powerhouse breaker from Mumbai, known for his explosive style and signature “2000” spin. Starting at 14, he rose from underground jams to win the Red Bull BC One Cypher India in 2019, becoming the first Indian to reach the Top-16 at the Last Chance Cypher. Founder of Young Rebelz and a 2023 Asia Breaking Championship contender, Tornado leads both on the floor and in building India’s breaking community.",
+      image: "tornado.jpg"
+    },
+    {
+      id: 12,
+      name: "B-Boy WildChild",
+      specialty: "B-Boying",
+      bio: "B-Boy Wildchild (Eshwar Tiwari) is a standout breaker from Mumbai who began his journey in 2012 through underground battles. He gained recognition after winning 16 straight local comps in 2014 and debuted internationally in Korea in 2017. His “Wild Spin” went viral in 2019, and in 2021, he won Red Bull BC One Cypher India, earning a wildcard for the World Finals—becoming one of the first Indian breakers on the global stage.",
+      image: "wildchild.jpg"
     }
   ];
 
@@ -162,7 +183,7 @@ const Index = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-transparent z-10 transition duration-700"></div>
 
       {/* Navigation */}
-      <nav className="relative z-50 flex items-center justify-between p-4 lg:px-8">
+      <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 lg:px-8 bg-gray-800/60 shadow-md">
         <div className="text-xl lg:text-2xl font-black tracking-tight">
           <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-gray-100 bg-clip-text text-transparent">
             Scene Sariba
@@ -209,6 +230,8 @@ const Index = () => {
           </div>
         </div>
       </nav>
+      
+      <div className="pt-16"></div>
 
       {/* Hero Section */}
       <section id="home" className="relative z-20 flex items-center justify-center min-h-screen text-center px-4 sm:px-8">
@@ -328,9 +351,9 @@ const Index = () => {
                       {/* Main image container */}
                       <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${isOpen ? 'h-1/2' : 'h-full'}`}>
                         <img 
-                          src="/lovable-uploads/efb1368f-0fa2-4edd-b531-1297d0a8321f.png" 
+                          src="maika.png" 
                           alt="Scene Sariba Artist Logo"
-                          className="w-20 h-20 object-contain opacity-60"
+                          className="w-full h-64 object-cover rounded-t-xl"
                         />
                       </div>
                       
