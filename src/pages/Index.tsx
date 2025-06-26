@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 import { MapPin, Instagram, Youtube, Music, Mail, Phone, Menu, X, RollerCoaster } from 'lucide-react';
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -24,6 +24,9 @@ const Index = () => {
   const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [navVisible, setNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -41,6 +44,31 @@ const Index = () => {
     scrollToSection(sectionId);
     setMobileMenuOpen(false);
   };
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY < lastScrollY || currentScrollY < 100) {
+          // Scrolling up or at top
+          setNavVisible(true); 
+        } else {
+          // Scrolling down
+          setNavVisible(false);
+          setMobileMenuOpen(false); // Close mobile menu when hiding nav
+        }
+        
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
 
   // Scroll animation hooks
   const aboutTitle = useScrollAnimation(0.3, 0);
@@ -64,63 +92,63 @@ const Index = () => {
       name: "Nextion",
       specialty: "Hip-Hop",
       bio: "Nextion is a dynamic hip-hop artist from Bhubaneswar, known for his fierce battles and powerful stage presence. He won the Red Bull Dance Your Style India 2025 finals in Delhi, earning a spot at the World Final in Los Angeles. A two-time national finalist (2022, 2025) and runner-up on India’s Best Dancer Season 4, his mix of raw energy and emotional storytelling makes him a standout in the street dance scene.",
-      image: "nextion.jpg"
+      image: "/nex1.jpg"
     },
     {
       id: 3,
       name: "Varun Dagar",
       specialty: "Street-Busking & balletic dance",
       bio: "Varun Dagar, a street dancer, singer, and choreographer from Palwal now based in Delhi, rose to fame with his soulful, balletic performances at Connaught Place. He won World of Dance Chennai in 2021 and gained national attention on India’s Best Dancer Season 2. Known for his expressive style and heartfelt artistry, Varun continues to inspire India’s street-dance scene.",
-      image: "varun.jpg"
+      image: "/varun.jpg"
     },
     {
       id: 4,
       name: "Faria Abdullah",
       specialty: "Actress",
       bio: "Faria Abdullah is an actress, dancer, and visual performer from Hyderabad, trained in Kathak, hip-hop, waacking, house, and belly dance. Starting with over 50 theatre plays, she rose to fame as “Chitti” in *Jathi Ratnalu* (2021). In 2025, she judged *Dance IKON 2: WildFire*, applauding diverse talent. Also a painter, poet, and activist, Faria channels her passion through many forms of expression.",
-      image: "faria.jpg"
+      image: "/faria.jpg"
     },
     {
       id: 5,
       name: "Nepo",
       specialty: "Hip-Hop",
       bio: "Deepak Shahi, aka Nepo, is a hip-hop dancer and choreographer from Haldwani, Uttarakhand. A two-time Red Bull Dance Your Style India champion (2021, 2023), he represented India at the World Finals in Germany. In 2024, he impressed on India’s Best Dancer Season 4 with choreographer Vartika Jha. Known for his dynamic style and infectious presence, Nepo is a leading force in India’s street-dance scene.",
-      image: "nepo.jpg"
+      image: "/nepo.jpeg"
     },
     {
       id: 6,
       name: "Alik",
       specialty: "Hip-hop",
       bio: "Alik Kim, known as Alik, is a hip-hop dancer from Almaty, Kazakhstan. A member of Zone 51 and instructor at Skillz Dance Studio, he’s known for his locking and freestyle flow. Gaining attention through viral videos and battle wins, Alik is steadily rising in Kazakhstan’s street-dance scene, with goals to grow through workshops, competitions, and digital content.",
-      image: "alik.jpg"
+      image: "/alik.jpg"
     },
     {
       id: 7,
       name: "Kama",
       specialty: "Hip-Hop",
       bio: "Kama (Kamila) is a leading hip-hop artist from Almaty, Kazakhstan, active as a choreographer and performer. She leads Flow Keeperz, offering workshops in groove, hip-hop and freestyle. Featured as a “Hip Hop Pro” at Almaty Dance Fest 2024 and headliner of Kazakhstan’s first Hip-Hop Base Camp in 2025. As both educator and artist, Kama continues to invigorate and inspire Central Asia’s growing street-dance community.",
-      image: "kama.jpg"
+      image: "/kama.jpg"
     },
     {
       id: 8,
       name: "Peot",
       specialty: "Hip-Hop, DJ",
       bio: "Amirul Hafiz, known as Peot, is a Malaysian hip-hop dancer and DJ. A seasoned competitor, he won the Judgment Day World Dance Games qualifier in 2019 and represented Malaysia in China. Featured on the podcast *Shoes Off, No Cap*, he speaks on hip-hop fundamentals, crew life (Walawei, BeatMyBois), and battle mindset. Through workshops, performances, and music, Peot stands as a key figure in Malaysia’s street dance culture.",
-      image: "peot.jpg"
+      image: "/peot.jpg"
     },
     {
       id: 9,
       name: "Paal Dabba",
       specialty: "Hip-Hop, Rapper",
       bio: "Paal Dabba, born Anish in 2000 in Chennai, is a dancer-turned-rapper, singer, songwriter, and choreographer. Rising with Bfab crew and winning Breezer Vivid Shuffle in 2019, he debuted in music with “3SHA” and “Ai,” followed by hits like “Chikkama,” “170CM,” “SAB,” and “Galatta.” In 2025, he stepped into acting with Vijay Milton’s bilingual film. Named in Rolling Stone India’s “Future Top 25 Artists 2024”",
-      image: "paal.jpg"
+      image: "/paal.jpg"
     },
     {
       id: 10,
       name: "Boogie LLB",
       specialty: "Popping",
       bio: "Boogie LLB (Anish Mitra) is a Kolkata-based popper known for his raw, street-driven style and underground roots. Rising from battles in barges and basements, he gained national attention on India’s Best Dancer Season 3 with heartfelt performances—like a thumri piece with Saumya Kamble that moved judge Sonali Bendre to dance. Blending underground grit with emotional depth, Boogie stands out as a powerful force in India’s urban dance scene.",
-      image: "boogie.jpg"
+      image: "/boogie.jpg"
     },
     {
       id: 11,
@@ -128,14 +156,14 @@ const Index = () => {
       role: "Content Creator",
       specialty: "B-Boying",
       bio: "B-Boy Tornado (Ramesh Anandabhushan Yadav) is a powerhouse breaker from Mumbai, known for his explosive style and signature “2000” spin. Starting at 14, he rose from underground jams to win the Red Bull BC One Cypher India in 2019, becoming the first Indian to reach the Top-16 at the Last Chance Cypher. Founder of Young Rebelz and a 2023 Asia Breaking Championship contender, Tornado leads both on the floor and in building India’s breaking community.",
-      image: "tornado.jpg"
+      image: "/tornado.jpg"
     },
     {
       id: 12,
       name: "B-Boy WildChild",
       specialty: "B-Boying",
       bio: "B-Boy Wildchild (Eshwar Tiwari) is a standout breaker from Mumbai who began his journey in 2012 through underground battles. He gained recognition after winning 16 straight local comps in 2014 and debuted internationally in Korea in 2017. His “Wild Spin” went viral in 2019, and in 2021, he won Red Bull BC One Cypher India, earning a wildcard for the World Finals—becoming one of the first Indian breakers on the global stage.",
-      image: "wildchild.jpg"
+      image: "/wildchild.jpg"
     }
   ];
 
@@ -333,50 +361,354 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {artists.map((artist, index) => {
-              const artistAnimation = useScrollAnimation(0.3, index * 100);
-              const isOpen = selectedArtist === artist.id;
-              
-              return (
-                <div 
-                  key={artist.id} 
-                  ref={artistAnimation.ref}
-                  className={`relative transition-all duration-700 ${artistAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                >
-                  <div 
-                    className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${isOpen ? 'h-80' : 'h-64'}`}
-                    onClick={() => setSelectedArtist(isOpen ? null : artist.id)}
-                  >
-                    <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${isOpen ? 'transform scale-105 z-30' : ''}`}>
-                      {/* Main image container */}
-                      <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${isOpen ? 'h-1/2' : 'h-full'}`}>
-                        <img 
-                          src="maika.png" 
-                          alt="Scene Sariba Artist Logo"
-                          className="w-full h-64 object-cover rounded-t-xl"
-                        />
-                      </div>
-                      
-                      {/* Overlay with basic info */}
-                      <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${isOpen ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
-                        <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${isOpen ? 'transform translate-y-0' : ''}`}>
-                          <h3 className="text-lg font-bold text-white mb-1">{artist.name}</h3>
-                          <p className="text-orange-300 text-sm font-semibold">{artist.role}</p>
-                        </div>
-                      </div>
-
-                      {/* Expanded content box */}
-                      <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${isOpen ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
-                        <div className="space-y-2">
-                          <p className="text-orange-300 text-sm font-semibold">{artist.specialty}</p>
-                          <p className="text-gray-200 text-xs leading-relaxed">{artist.bio}</p>
-                        </div>
-                      </div>
+            {/* Artist 1 - Maika Rush */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 1 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 1 ? null : 1)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 1 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 1 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/maika.png" 
+                      alt="Maika Rush"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 1 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 1 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Maika Rush</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 1 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">MAiKA is a Japanese hip-hop dancer and choreographer from Osaka, co-founder of the crew RushBall. She's earned top titles at DANCE@LIVE Kids, Juste Debout, WDC, and DanceAlive All-Styles. Known for her groovy yet powerful style, she creates choreography for music videos, theme-park shows, and trains youth teams. In 2025, she signed with streetwear brands G-shock, X-girl and XLARGE to inspire the next generation of Japanese female hip-hop dancers</p>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            </div>
+
+            {/* Artist 2 - Nextion */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 2 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 2 ? null : 2)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 2 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 2 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/nex1.jpg" 
+                      alt="Nextion"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 2 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 2 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Nextion</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 2 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Nextion is a dynamic hip-hop artist from Bhubaneswar, known for his fierce battles and powerful stage presence. He won the Red Bull Dance Your Style India 2025 finals in Delhi, earning a spot at the World Final in Los Angeles. A two-time national finalist (2022, 2025) and runner-up on India's Best Dancer Season 4, his mix of raw energy and emotional storytelling makes him a standout in the street dance scene.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 3 - Varun Dagar */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 3 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 3 ? null : 3)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 3 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 3 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/varun.jpg" 
+                      alt="Varun Dagar"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 3 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 3 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Varun Dagar</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 3 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Street-Busking & balletic dance</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Varun Dagar, a street dancer, singer, and choreographer from Palwal now based in Delhi, rose to fame with his soulful, balletic performances at Connaught Place. He won World of Dance Chennai in 2021 and gained national attention on India's Best Dancer Season 2. Known for his expressive style and heartfelt artistry, Varun continues to inspire India's street-dance scene.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 4 - Faria Abdullah */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 4 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 4 ? null : 4)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 4 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 4 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/faria.jpg" 
+                      alt="Faria Abdullah"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 4 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 4 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Faria Abdullah</h3>
+
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 4 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Actress</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Faria Abdullah is an actress, dancer, and visual performer from Hyderabad, trained in Kathak, hip-hop, waacking, house, and belly dance. Starting with over 50 theatre plays, she rose to fame as "Chitti" in *Jathi Ratnalu* (2021). In 2025, she judged *Dance IKON 2: WildFire*, applauding diverse talent. Also a painter, poet, and activist, Faria channels her passion through many forms of expression.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 5 - Nepo */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 5 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 5 ? null : 5)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 5 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 5 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/nepo.jpeg" 
+                      alt="Nepo"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 5 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 5 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Nepo</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 5 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Deepak Shahi, aka Nepo, is a hip-hop dancer and choreographer from Haldwani, Uttarakhand. A two-time Red Bull Dance Your Style India champion (2021, 2023), he represented India at the World Finals in Germany. In 2024, he impressed on India's Best Dancer Season 4 with choreographer Vartika Jha. Known for his dynamic style and infectious presence, Nepo is a leading force in India's street-dance scene.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 6 - Alik */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 6 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 6 ? null : 6)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 6 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 6 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/alik.jpg" 
+                      alt="Alik"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 6 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 6 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Alik</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 6 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-hop</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Alik Kim, known as Alik, is a hip-hop dancer from Almaty, Kazakhstan. A member of Zone 51 and instructor at Skillz Dance Studio, he's known for his locking and freestyle flow. Gaining attention through viral videos and battle wins, Alik is steadily rising in Kazakhstan's street-dance scene, with goals to grow through workshops, competitions, and digital content.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 7 - Kama */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 7 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 7 ? null : 7)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 7 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 7 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/kama.jpg" 
+                      alt="Kama"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 7 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 7 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Kama</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 7 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Kama (Kamila) is a leading hip-hop artist from Almaty, Kazakhstan, active as a choreographer and performer. She leads Flow Keeperz, offering workshops in groove, hip-hop and freestyle. Featured as a "Hip Hop Pro" at Almaty Dance Fest 2024 and headliner of Kazakhstan's first Hip-Hop Base Camp in 2025. As both educator and artist, Kama continues to invigorate and inspire Central Asia's growing street-dance community.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 8 - Peot */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 8 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 8 ? null : 8)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 8 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 8 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/peot.jpg" 
+                      alt="Peot"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 8 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 8 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Peot</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 8 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-Hop, DJ</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Amirul Hafiz, known as Peot, is a Malaysian hip-hop dancer and DJ. A seasoned competitor, he won the Judgment Day World Dance Games qualifier in 2019 and represented Malaysia in China. Featured on the podcast *Shoes Off, No Cap*, he speaks on hip-hop fundamentals, crew life (Walawei, BeatMyBois), and battle mindset. Through workshops, performances, and music, Peot stands as a key figure in Malaysia's street dance culture.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 9 - Paal Dabba */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 9 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 9 ? null : 9)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 9 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 9 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/paal.jpg" 
+                      alt="Paal Dabba"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 9 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 9 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Paal Dabba</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 9 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Hip-Hop, Rapper</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Paal Dabba, born Anish in 2000 in Chennai, is a dancer-turned-rapper, singer, songwriter, and choreographer. Rising with Bfab crew and winning Breezer Vivid Shuffle in 2019, he debuted in music with "3SHA" and "Ai," followed by hits like "Chikkama," "170CM," "SAB," and "Galatta." In 2025, he stepped into acting with Vijay Milton's bilingual film. Named in Rolling Stone India's "Future Top 25 Artists 2024"</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 10 - Boogie LLB */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 10 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 10 ? null : 10)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 10 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 10 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/boogie.jpg" 
+                      alt="Boogie LLB"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 10 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 10 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">Boogie LLB</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 10 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">Popping</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">Boogie LLB (Anish Mitra) is a Kolkata-based popper known for his raw, street-driven style and underground roots. Rising from battles in barges and basements, he gained national attention on India's Best Dancer Season 3 with heartfelt performances—like a thumri piece with Saumya Kamble that moved judge Sonali Bendre to dance. Blending underground grit with emotional depth, Boogie stands out as a powerful force in India's urban dance scene.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 11 - B-Boy Tornado */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 11 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 11 ? null : 11)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 11 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 11 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/tornado.jpg" 
+                      alt="B-Boy Tornado"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 11 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 11 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">B-Boy Tornado</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 11 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">B-Boying</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">B-Boy Tornado (Ramesh Anandabhushan Yadav) is a powerhouse breaker from Mumbai, known for his explosive style and signature "2000" spin. Starting at 14, he rose from underground jams to win the Red Bull BC One Cypher India in 2019, becoming the first Indian to reach the Top-16 at the Last Chance Cypher. Founder of Young Rebelz and a 2023 Asia Breaking Championship contender, Tornado leads both on the floor and in building India's breaking community.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Artist 12 - B-Boy WildChild */}
+            <div className="relative transition-all duration-700 opacity-100 translate-y-0">
+              <div 
+                className={`relative group cursor-pointer transform hover:scale-105 transition-all duration-500 ${selectedArtist === 12 ? 'h-80' : 'h-64'}`}
+                onClick={() => setSelectedArtist(selectedArtist === 12 ? null : 12)}
+              >
+                <div className={`relative w-full h-full bg-gray-700/60 border border-purple-400/20 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 rounded-2xl overflow-hidden ${selectedArtist === 12 ? 'transform scale-105 z-30' : ''}`}>
+                  <div className={`w-full bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center rounded-2xl transition-all duration-500 ${selectedArtist === 12 ? 'h-1/2' : 'h-full'}`}>
+                    <img 
+                      src="/wildchild.jpg" 
+                      alt="B-Boy WildChild"
+                      className="w-full h-64 object-cover rounded-t-xl"
+                    />
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent transition-all duration-500 rounded-2xl ${selectedArtist === 12 ? 'opacity-85' : 'opacity-70 group-hover:opacity-85'}`}>
+                    <div className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 ${selectedArtist === 12 ? 'transform translate-y-0' : ''}`}>
+                      <h3 className="text-lg font-bold text-white mb-1">B-Boy WildChild</h3>
+                    </div>
+                  </div>
+                  <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 12 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
+                    <div className="space-y-2">
+                      <p className="text-orange-300 text-sm font-semibold">B-Boying</p>
+                      <p className="text-gray-200 text-xs leading-relaxed">B-Boy Wildchild (Eshwar Tiwari) is a standout breaker from Mumbai who began his journey in 2012 through underground battles. He gained recognition after winning 16 straight local comps in 2014 and debuted internationally in Korea in 2017. His "Wild Spin" went viral in 2019, and in 2021, he won Red Bull BC One Cypher India, earning a wildcard for the World Finals—becoming one of the first Indian breakers on the global stage.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
