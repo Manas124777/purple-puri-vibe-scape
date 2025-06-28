@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Theronked';
+  src: url('./fonts/Theronked-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AndalanBoxing';
+  src: url('./fonts/AndalanBoxing.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -98,6 +98,11 @@ export default {
 			transformOrigin: {
     'center': 'center',
   		},
+			fontFamily: {
+				theronked: ['"Theronked"', 'sans-serif'],
+				marker: ['"Permanent Marker"', 'cursive'],
+				andalan: ['"AndalanBoxing"', 'sans-serif'],
+			},	
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
