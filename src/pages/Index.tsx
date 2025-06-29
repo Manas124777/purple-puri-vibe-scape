@@ -27,6 +27,7 @@ const Index = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [expandedArtistID, setExpandedArtistID] = useState<number | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -438,7 +439,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 1 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">MAiKA is a Japanese hip-hop dancer and choreographer from Osaka, co-founder of the crew RushBall. She's earned top titles at DANCE@LIVE Kids, Juste Debout, WDC, and DanceAlive All-Styles. Known for her groovy yet powerful style, she creates choreography for music videos, theme-park shows, and trains youth teams. In 2025, she signed with streetwear brands G-shock, X-girl and XLARGE to inspire the next generation of Japanese female hip-hop dancers</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -472,7 +475,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 2 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Nextion is a dynamic hip-hop artist from Bhubaneswar, known for his fierce battles and powerful stage presence. He won the Red Bull Dance Your Style India 2025 finals in Delhi, earning a spot at the World Final in Los Angeles. A two-time national finalist (2022, 2025) and runner-up on India's Best Dancer Season 4, his mix of raw energy and emotional storytelling makes him a standout in the street dance scene.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -506,7 +511,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 3 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Street-Busking & balletic dance</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Varun Dagar, a street dancer, singer, and choreographer from Palwal now based in Delhi, rose to fame with his soulful, balletic performances at Connaught Place. He won World of Dance Chennai in 2021 and gained national attention on India's Best Dancer Season 2. Known for his expressive style and heartfelt artistry, Varun continues to inspire India's street-dance scene.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -541,7 +548,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 4 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Actress</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Faria Abdullah is an actress, dancer, and visual performer from Hyderabad, trained in Kathak, hip-hop, waacking, house, and belly dance. Starting with over 50 theatre plays, she rose to fame as "Chitti" in *Jathi Ratnalu* (2021). In 2025, she judged *Dance IKON 2: WildFire*, applauding diverse talent. Also a painter, poet, and activist, Faria channels her passion through many forms of expression.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -575,7 +584,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 5 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Deepak Shahi, aka Nepo, is a hip-hop dancer and choreographer from Haldwani, Uttarakhand. A two-time Red Bull Dance Your Style India champion (2021, 2023), he represented India at the World Finals in Germany. In 2024, he impressed on India's Best Dancer Season 4 with choreographer Vartika Jha. Known for his dynamic style and infectious presence, Nepo is a leading force in India's street-dance scene.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -609,7 +620,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 6 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-hop</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Alik Kim, known as Alik, is a hip-hop dancer from Almaty, Kazakhstan. A member of Zone 51 and instructor at Skillz Dance Studio, he's known for his locking and freestyle flow. Gaining attention through viral videos and battle wins, Alik is steadily rising in Kazakhstan's street-dance scene, with goals to grow through workshops, competitions, and digital content.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -643,7 +656,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 7 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Kama (Kamila) is a leading hip-hop artist from Almaty, Kazakhstan, active as a choreographer and performer. She leads Flow Keeperz, offering workshops in groove, hip-hop and freestyle. Featured as a "Hip Hop Pro" at Almaty Dance Fest 2024 and headliner of Kazakhstan's first Hip-Hop Base Camp in 2025. As both educator and artist, Kama continues to invigorate and inspire Central Asia's growing street-dance community.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -677,7 +692,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 8 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop, DJ</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2">
                       <p className="text-gray-200 text-xs leading-relaxed">Amirul Hafiz, known as Peot, is a Malaysian hip-hop dancer and DJ. A seasoned competitor, he won the Judgment Day World Dance Games qualifier in 2019 and represented Malaysia in China. Featured on the podcast *Shoes Off, No Cap*, he speaks on hip-hop fundamentals, crew life (Walawei, BeatMyBois), and battle mindset. Through workshops, performances, and music, Peot stands as a key figure in Malaysia's street dance culture.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -711,7 +728,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 9 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop, Rapper</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Paal Dabba, born Anish in 2000 in Chennai, is a dancer-turned-rapper, singer, songwriter, and choreographer. Rising with Bfab crew and winning Breezer Vivid Shuffle in 2019, he debuted in music with "3SHA" and "Ai," followed by hits like "170CM," "SAB," and "Galatta." In 2025, he stepped into acting with Vijay Milton's bilingual film. Named in Rolling Stone India's "Future Top 25 Artists 2024"</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -745,7 +764,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 10 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Popping</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Boogie LLB (Anish Mitra) is a Kolkata-based popper known for his raw, street-driven style and underground roots. Rising from battles in barges and basements, he gained national attention on India's Best Dancer Season 3 with heartfelt performances—like a thumri piece with Saumya Kamble that moved judge Sonali Bendre to dance. Blending underground grit with emotional depth, Boogie stands out as a powerful force in India's urban dance scene.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -779,7 +800,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 11 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">B-Boying</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">B-Boy Tornado (Ramesh Anandabhushan Yadav) is a powerhouse breaker from Mumbai, known for his explosive style and signature "2000" spin. Starting at 14, he rose from underground jams to win the Red Bull BC One Cypher India in 2019, becoming the first Indian to reach the Top-16 at the Last Chance Cypher. Founder of Young Rebelz and a 2023 Asia Breaking Championship contender, Tornado leads both on the floor and in building India's breaking community.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -813,7 +836,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 12 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">B-Boying</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">B-Boy Wildchild (Eshwar Tiwari) is a standout breaker from Mumbai who began his journey in 2012 through underground battles. He gained recognition after winning 16 straight local comps in 2014 and debuted internationally in Korea in 2017. His "Wild Spin" went viral in 2019, and in 2021, he won Red Bull BC One Cypher India, earning a wildcard for the World Finals—becoming one of the first Indian breakers on the global stage.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -847,7 +872,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 13 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop, Rapper</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Vengayo is a genre-blending dancer, rapper, and director known for his high-energy hip-hop style and viral street choreos. Based in India, he gained fame through Instagram (@vengayo__) with explosive “Chikkama” routines and striking visuals. Blending desi rhythm with global footwork, he directs his own music videos—pushing street culture forward through bold movement and storytelling.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -881,7 +908,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 14 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Actress</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Supriya Nayak is a rising Ollywood actress and former Miss Odisha runner-up (2014), known for her charm and screen presence. She debuted with Love Pain Kuchh Bhi Karega (2016) and gained recognition through films like Only Pyaar (2018) and Biju Babu (2019). Recently seen in Astika Nastika (2022), Pushkara (2023), and Kuhudi (2024). With her versatile performances, Supriya continues to shine in Odisha’s film industry.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -915,7 +944,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 15 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Hip-Hop, Beat Maker</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Instinct.Prime (aka Ruff Killah) is a hip-hop dancer and beat-maker from Luxembourg, known for his explosive energy and rhythmic movement. A regular at events like LADC, he blends street dance with musicality inspired by global influences. As Ruff Killah on SoundCloud, he also crafts original tracks rooted in hip-hop and groove-heavy beats.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -949,7 +980,9 @@ const Index = () => {
                   <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 16 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
                       <p className="text-orange-300 text-sm font-semibold">Emcee</p>
+                      <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Deepak Yadav is the vibrant emcee of Red Bull Dance Your Style India, known for his smooth crowd work and deep roots in hip-hop culture. Based in Lucknow, he balances life as a software engineer with his passion for hosting battles, jams, and cyphers across India. With sharp mic control and captivating energy, he brings dancers, DJs, and audiences together on every stage he commands.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
