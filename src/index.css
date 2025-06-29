@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Theronked';
-  src: url('/src/fonts/Theronked-Regular.otf') format('onetype');
+  src: url('/src/fonts/Theronked-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AndalanBoxing';
-  src: url('/src/fonts/AndalanBoxing.otf') format('onetype');
+  src: url('/src/fonts/AndalanBoxing.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
