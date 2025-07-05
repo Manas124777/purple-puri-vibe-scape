@@ -1,0 +1,33 @@
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll linear infinite;
+}
+
+.logo {
+  flex: 0 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Keyframes for seamless scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
