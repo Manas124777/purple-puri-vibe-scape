@@ -435,6 +435,8 @@ const Index = () => {
             </h2>
           </div>
            
+           
+           
            {/* Founder - The Addyction (Centered Below Title, Above Grid) */}
 <div className="w-full flex justify-center mb-8">
   {/* Founder - The Addyction */}
@@ -485,10 +487,6 @@ const Index = () => {
   </div>
 </div>
 </div>
- 
-
-
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
             
