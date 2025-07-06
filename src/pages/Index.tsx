@@ -79,7 +79,6 @@ const Index = () => {
   const galleryTitle = useScrollAnimation(0.3, 0);
   const contactTitle = useScrollAnimation(0.3, 0);
   const contactDesc = useScrollAnimation(0.3, 200);
-  const partnersTitle = useScrollAnimation(0.3, 0);
 
   const artists = [
     {
@@ -272,7 +271,7 @@ const Index = () => {
     
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-3">
-          {['home','about','artists','gallery','partners','contact'].map(sec => (
+          {['home','about','artists','gallery','contact'].map(sec => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
@@ -297,7 +296,7 @@ const Index = () => {
         {/* Mobile Menu Dropdown */}
         <div className={`absolute top-full right-4 mt-2 bg-gray-800/95 backdrop-blur-lg border border-gray-600/50 rounded-xl shadow-2xl md:hidden transition-all duration-500 origin-top-right ${mobileMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
           <div className="py-2">
-            {['home','about','artists','gallery','partners','contact'].map((sec, index) => (
+            {['home','about','artists','gallery','contact'].map((sec, index) => (
               <button
                 key={sec}
                 onClick={() => handleNavClick(sec)}
@@ -1043,26 +1042,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section id="partners" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-12 left-10 w-28 h-28 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
-          <div className="absolute bottom-12 right-16 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-2/3 left-1/4 w-12 h-12 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '3s' }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div ref={partnersTitle.ref} className={`text-center mb-12 transition-all duration-1000 ${partnersTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-5xl lg:text-6xl font-theronked font-heading font-medium mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                PARTNERS
-              </span>
-            </h2>
-          </div>
-        </div>  
-      </section>
-
-      
       {/* Image Dialog */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl w-full h-auto p-0 bg-transparent border-none">
