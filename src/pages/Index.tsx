@@ -372,7 +372,7 @@ const Index = () => {
       </div>
 
       {/* Event Section */}
-      <section id="event" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
+      <section id="events" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
   {/* Background Animations */}
   <div className="absolute inset-0 overflow-hidden">
     <div className="absolute top-12 left-10 w-24 h-24 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform rotate-45"></div>
