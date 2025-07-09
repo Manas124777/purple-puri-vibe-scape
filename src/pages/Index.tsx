@@ -249,7 +249,7 @@ const Index = () => {
     title: "Scene Sariba Jam",
     date: "TBD",
     time: "TBD",
-    location: "TBD",
+    location: "Bhubaneswar, Odisha",
     participants: "10k+ Participants",
     description: "An electrifying dance battle jam where India’s finest battle it out by the waves of Puri Beach."
   },
@@ -258,8 +258,8 @@ const Index = () => {
     title: "Scene Sariba Concert",
     date: "TBD",
     time: "TBD",
-    location: "TBD",
-    participants: "10k+ Participants",
+    location: "Bhubaneswar, Odisha",
+    participants: "10k+ Viewers",
     description: "Witness a high-energy concert blending music, culture, art and street dance in the heart of Odisha."
   }
 ];
@@ -477,7 +477,7 @@ const Index = () => {
 
       <div className={`absolute bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-lg border-t border-orange-400/30 p-4 transition-all duration-500 rounded-b-2xl ${selectedArtist === 1 ? 'transform translate-y-0 opacity-100' : 'transform translate-y-full opacity-0'}`}>
                     <div className="space-y-2">
-                      <p className="text-orange-300 text-sm font-semibold">Founder, Hip-Hop</p>
+                      <p className="text-orange-300 text-sm font-semibold">Founder of Scene Sariba</p>
                       <div className="h-32 md:h-32 overflow-y-auto pr-2 thin-scrollbar">
                       <p className="text-gray-200 text-xs leading-relaxed">Addyction a.k.a Adarsh Mishra is the founder of Scene Sariba Jam and a leading hip-hop artist from Odisha. Known for blending Hip-Hop and rap with Odia roots, he has represented India at major international stages in Malaysia, Nepal, South Korea, and Abu Dhabi—including the 2017 World Hip-Hop Dance Championship. Through Scene Sariba, he unites global and underground street culture on his home turf in Puri, celebrating movement, rhythm, and community.</p>
                       </div>
@@ -1165,7 +1165,7 @@ const Index = () => {
                     </span>
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-6">
-                    Scene Sariba Jam is a vibrant beachside hip-hop dance festival held on Puri’s Niladri Beach. Founded by Grooveyard in 2022, it unites dancers from across India and abroad for raw battles, cyphers, showcases, and workshops. Celebrating street culture, movement, and community, Scene Sariba is where rhythm meets rebellion—and dancers bring the sand to life.
+                    Scene Sariba Jam is a vibrant hip-hop dance festival held in East India. Founded by Grooveyard in 2022, it unites dancers from across India and abroad for raw battles, cyphers, showcases, and workshops. Celebrating street culture, movement, and community, Scene Sariba is where rhythm meets rebellion—and dancers bring the energy to life.
                   </p>
                 </div>
               </div>
@@ -1176,15 +1176,15 @@ const Index = () => {
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-orange-400" />
-                    <span className="text-gray-300 text-sm">scenesariba@gmail.com</span>
+                    <span className="text-gray-300 text-sm">adarshmishra078@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5 text-orange-400" />
-                    <span className="text-gray-300 text-sm">+91 98765 43210</span>
+                    <span className="text-gray-300 text-sm">+91 73816 11026</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-5 h-5 text-orange-400" />
-                    <span className="text-gray-300 text-sm">Puri Beach, Odisha</span>
+                    <span className="text-gray-300 text-sm">Bhubaneswar, Odisha</span>
                   </div>
                 </div>
               </div>
@@ -1193,7 +1193,7 @@ const Index = () => {
             {/* Bottom Copyright */}
             <div className="border-t border-gray-700/50 pt-8 text-center">
               <p className="text-gray-400 text-sm">
-                © 2025 Scene Sariba. All rights reserved. | Puri's Dance Community
+                © 2025 Scene Sariba. All rights reserved. | Odisha Hood Community
               </p>
             </div>
           </div>
