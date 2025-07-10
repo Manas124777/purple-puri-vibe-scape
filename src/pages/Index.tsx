@@ -1125,27 +1125,25 @@ const Index = () => {
 
 {/* Image Dialog */}
 <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-  <DialogContent className="max-w-4xl w-full h-auto p-0 bg-transparent border-none [&>button]:hidden">
-    <div className="relative">
-      <div className="w-full h-96 bg-black rounded-lg flex items-center justify-center overflow-hidden">
-        {selectedImage ? (
-          <img 
-            src={selectedImage}
-            alt="Full View"
-            className="w-full h-full object-contain"
-          />
-        ) : (
-          <p className="text-white text-xl">Gallery Image</p>
-        )}
-      </div>
-      
-      <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
+  <DialogContent className="w-full max-w-4xl bg-transparent border-none p-0 flex items-center justify-center [&>button]:hidden">
+    <div className="relative w-full max-h-[80vh] flex justify-center items-center overflow-hidden rounded-lg">
+      {selectedImage ? (
+        <img
+          src={selectedImage}
+          alt="Full View"
+          className="max-h-[80vh] w-auto h-auto object-contain"
+        />
+      ) : (
+        <p className="text-white text-xl">Gallery Image</p>
+      )}
+
+      <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200 z-50">
         <X className="w-6 h-6" />
       </DialogClose>
-      
     </div>
   </DialogContent>
 </Dialog>
+
 
       {/* About Us Section */}
       <section id="about" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
