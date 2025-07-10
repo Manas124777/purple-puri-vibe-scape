@@ -212,35 +212,35 @@ const Index = () => {
   const galleryItems = [
     {
       id: 1,
-      title: "Scene Sariba Jam 2023"
+      Image: "/gal1.jpg" 
     },
     {
       id: 2,
-      title: "Summer Concert"
+      Image: "/gal2.jpg"
     },
     {
       id: 3,
-      title: "Community Gathering"
+      Image: "/gal3.jpg"
     },
     {
       id: 4,
-      title: "Street Battles"
+      Image: "/gal4.jpg"
     },
     {
       id: 5,
-      title: "Cultural Fusion"
+      Image: "/gal5.jpg"
     },
     {
       id: 6,
-      title: "Beach Vibes"
+      Image: "/gal6.jpg"
     },
     {
       id: 7,
-      title: "Workshop Session"
+      Image: "/gal7.jpg"
     },
     {
       id: 8,
-      title: "Night Performance"
+      Image: "/gal8.jpg"
     }
   ];
   const upcomingEvents = [
@@ -1070,72 +1070,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-12 left-10 w-28 h-28 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
-          <div className="absolute bottom-12 right-16 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-2/3 left-1/4 w-12 h-12 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '3s' }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div ref={galleryTitle.ref} className={`text-center mb-12 transition-all duration-1000 ${galleryTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-5xl lg:text-6xl font-theronked font-heading font-medium mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                GALLERY
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {galleryItems.map((item, index) => {
-              const galleryAnimation = useScrollAnimation(0.3, index * 100);
-              
-              return (
-                <div 
-                  key={item.id} 
-                  ref={galleryAnimation.ref}
-                  className={`relative transition-all duration-700 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                >
-                  <div 
-                    className="relative group cursor-pointer h-64 transform transition-all duration-300 hover:scale-105"
-                    onClick={() => setSelectedImage(`gallery-${item.id}`)}
-                  >
-                    <div className="relative w-full h-full bg-black border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden">
-                      {/* Completely black container */}
-                      <div className="w-full h-full bg-black rounded-2xl"></div>
-                      
-                      {/* Title overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 transition-all duration-500 rounded-2xl flex items-end justify-center">
-                        <div className="p-4 text-center">
-                          <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Partners Section */}
       <PartnersSection patnersRef={partnersTitle.ref} isVisible={partnersTitle.isVisible}/>
-      
-      {/* Image Dialog */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl w-full h-auto p-0 bg-transparent border-none">
-          <div className="relative">
-            <div className="w-full h-96 bg-black rounded-lg flex items-center justify-center">
-              <p className="text-white text-xl">Gallery Image Placeholder</p>
+
+      {/* Gallery Section */}
+<section id="gallery" className="relative z-10 py-8 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
+  {/* Background Animations */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute top-12 left-10 w-28 h-28 bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-full animate-pulse transform -rotate-12"></div>
+    <div className="absolute bottom-12 right-16 w-20 h-20 bg-gradient-to-r from-purple-500/15 to-orange-500/15 rounded-full animate-bounce transform rotate-45" style={{ animationDelay: '1.5s' }}></div>
+    <div className="absolute top-2/3 left-1/4 w-12 h-12 bg-gradient-to-r from-orange-400/20 to-purple-400/20 rounded-full animate-pulse transform rotate-90" style={{ animationDelay: '3s' }}></div>
+  </div>
+
+  <div className="max-w-7xl mx-auto relative z-10">
+    <div ref={galleryTitle.ref} className={`text-center mb-12 transition-all duration-1000 ${galleryTitle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <h2 className="text-5xl lg:text-6xl font-theronked font-heading font-medium mb-6">
+        <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
+          GALLERY
+        </span>
+      </h2>
+    </div>
+
+    {/* Image Grid */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {Array.from({ length: 8 }, (_, i) => ({
+        id: i + 1,
+        image: `/gal${i + 1}.png`
+      })).map((item, index) => {
+        const galleryAnimation = useScrollAnimation(0.3, index * 100);
+        return (
+          <div 
+            key={item.id}
+            ref={galleryAnimation.ref}
+            className={`relative transition-all duration-700 ${galleryAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
+            <div 
+              className="relative group cursor-pointer h-64 transform transition-all duration-300 hover:scale-105"
+              onClick={() => setSelectedImage(item.image)}
+            >
+              <div className="relative w-full h-full bg-black border border-purple-400/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 rounded-2xl overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={`Gallery Image ${item.id}`} 
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
             </div>
-            <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
-              <X className="w-6 h-6" />
-            </DialogClose>
           </div>
-        </DialogContent>
-      </Dialog>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+{/* Image Dialog */}
+<Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+  <DialogContent className="max-w-4xl w-full h-auto p-0 bg-transparent border-none [&>button]:hidden">
+    <div className="relative">
+      <div className="w-full h-96 bg-black rounded-lg flex items-center justify-center overflow-hidden">
+        {selectedImage ? (
+          <img 
+            src={selectedImage}
+            alt="Full View"
+            className="w-full h-full object-contain"
+          />
+        ) : (
+          <p className="text-white text-xl">Gallery Image</p>
+        )}
+      </div>
+      
+      <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
+        <X className="w-6 h-6" />
+      </DialogClose>
+      
+    </div>
+  </DialogContent>
+</Dialog>
 
       {/* About Us Section */}
       <section id="about" className="relative z-10 py-16 px-8 lg:px-16 bg-gray-800/60 backdrop-blur-md">
