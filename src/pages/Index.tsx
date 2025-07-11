@@ -305,7 +305,7 @@ const Index = () => {
     
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-3">
-          {['home','events','artists','gallery','partners','about'].map(sec => (
+          {['home','events','artists','partners','gallery','about'].map(sec => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
@@ -330,7 +330,7 @@ const Index = () => {
         {/* Mobile Menu Dropdown */}
         <div className={`absolute top-full right-4 mt-2 bg-gray-800/95 backdrop-blur-lg border border-gray-600/50 rounded-xl shadow-2xl md:hidden transition-all duration-500 origin-top-right ${mobileMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
           <div className="py-2">
-            {['home','events','artists','gallery','partners','about'].map((sec, index) => (
+            {['home','events','artists','partners','gallery','about'].map((sec, index) => (
               <button
                 key={sec}
                 onClick={() => handleNavClick(sec)}
