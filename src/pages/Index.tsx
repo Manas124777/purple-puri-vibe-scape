@@ -1133,9 +1133,8 @@ const Index = () => {
           alt="Full View"
           className="max-h-[80vh] w-auto h-auto object-contain"
         />
-      ) : (
-        <p className="text-white text-xl">Gallery Image</p>
-      )}
+      ) 
+       : null}
 
       <DialogClose className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200 z-50">
         <X className="w-6 h-6" />
@@ -1173,7 +1172,7 @@ const Index = () => {
                     </span>
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-6">
-                    Scene Sariba Jam is a vibrant hip-hop dance festival held in East India. Founded by Grooveyard in 2022, it unites dancers from across India and abroad for raw battles, cyphers, showcases, and workshops. Celebrating street culture, movement, and community, Scene Sariba is where rhythm meets rebellion—and dancers bring the energy to life.
+                    Scene Sariba Jam is a vibrant Hip-hop dance and music festival held in East India. Founded by Addyction in 2022, it unites dancers from across India and abroad for raw battles, cyphers, showcases, and workshops. Celebrating street culture, movement, and community, Scene Sariba is where rhythm meets rebellion—and dancers bring the energy to life.
                   </p>
                 </div>
               </div>
@@ -1205,6 +1204,10 @@ const Index = () => {
               </p>
             </div>
           </div>
+          {/* Credit at bottom right */}
+      <div className="fixed bottom-4 right-4 z-50 font-andalan text-xs text-gray-400 bg-gray-900/80 px-3 py-1 rounded-lg shadow-lg pointer-events-none select-none">
+        Created by Manas Ranjan
+      </div>
         </div>
       </section>
 
@@ -1228,6 +1231,7 @@ const Index = () => {
           }
         `}
       </style>
+      
     </div>
   );
 };
