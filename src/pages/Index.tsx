@@ -1172,7 +1172,7 @@ const Index = () => {
                     </span>
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-6">
-                    Scene Sariba Jam is a vibrant Hip-hop dance and music festival held in East India. Founded by Addyction in 2022, it unites dancers from across India and abroad for raw battles, cyphers, showcases, and workshops. Celebrating street culture, movement, and community, Scene Sariba is where rhythm meets rebellion—and dancers bring the energy to life.
+                    Scene Sariba Jam is a vibrant Hip-hop dance and music festival held in East India. Founded by Addyction in 2018, it unites dancers from across India and abroad for raw battles, cyphers, showcases, and workshops. Celebrating street culture, movement, and community, Scene Sariba is where rhythm meets rebellion—and dancers bring the energy to life.
                   </p>
                 </div>
               </div>
