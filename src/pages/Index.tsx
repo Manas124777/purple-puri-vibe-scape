@@ -251,7 +251,7 @@ const Index = () => {
     time: "TBD",
     location: "Bhubaneswar, Odisha",
     participants: "10k+ Participants",
-    description: "An electrifying dance battle jam where India’s finest battle it out by the waves of Puri Beach."
+    description: "An electrifying dance battle jam where India’s finest battle it out is in the town"
   },
   {
     id: 2,
