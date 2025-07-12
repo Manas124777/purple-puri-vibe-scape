@@ -277,13 +277,9 @@ const Index = () => {
       <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 lg:px-8 bg-gray-800/60 shadow-md">
       <div className="flex items-center space-x-3">
         <div className="text-xl lg:text-2xl font-theronked font-medium tracking-normal">
-          <button
-    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-    className="font-heading bg-gradient-to-r from-orange-400 via-orange-300 to-orange-300 bg-clip-text text-transparent focus:outline-none"
-    aria-label="Go to top"
-  >
-    Scene Sariba
-  </button>
+          <span className="font-heading bg-gradient-to-r from-orange-400 via-orange-300 to-orange-300 bg-clip-text text-transparent">
+            Scene Sariba
+          </span>
       </div>
 
       {/* Social Media Icons */}
