@@ -16,9 +16,14 @@ const LogoMarquee: React.FC = () => {
     "T.jpg",
     "UT.png",
     "TCP.jpg",
+    "Green Chilli.png",
+    "Holiday Resort.png",
+    "Asset 5UM.png",
+    "Indian Oil.png",
+    "Oppo.png",
   ];
 
-  const animationSpeed = 35; // in seconds
+  const animationSpeed = 40; // in seconds
 
   return (
   < div className="w-full flex justify-center">
