@@ -401,9 +401,9 @@ const Index = () => {
     <div key={event.id} className="relative w-full max-w-lg max-auto bg-gray-700/60 backdrop-blur-md rounded-2xl p-8 border border-purple-400/20 hover:bg-gray-600/50 transition-all duration-300 hover:scale-105">
       <h3 className="text-2xl font-theronked font-normal bg-gradient-to-r from-orange-400 via-orange-300 to-orange-300 bg-clip-text text-transparent mb-4 flex items-center justify-between gap-2">
         <span>{event.title}</span>
-       {/* <span className="px-2 py-1 rounded-full bg-red-600 text-white font-sans text-xs font-bold animate-pulse shadow-lg">
+        <span className="px-2 py-1 rounded-full bg-red-600 text-white font-sans text-xs font-bold animate-pulse shadow-lg">
           LIVE
-        </span> */}
+        </span> 
       </h3>
             
           <div className="space-y-3 mb-4 text-purple-200">
